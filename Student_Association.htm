@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>興大學生會</title>
+
+        <!-- for Google -->
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <meta name="author" content="" />
+        <meta name="copyright" content="" />
+        <meta name="application-name" content="" />
+
+        <!-- for Facebook -->
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- for Twitter -->
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:image" content="" />
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+        <link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+        <link rel="stylesheet" href="site.css">
+
+        <!-- justfont -->
+        <script type="text/javascript" src="js/justfont.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <!--google spreadsheet data base-->
+        <script>
+        var ids = new Array();
+        var titles = new Array();
+        var names = new Array();
+        var snames = new Array();
+        var fbs = new Array();
+        var links = new Array();
+            function test(json) {
+                for (var i = 0; i < json.feed.entry.length; i++) {
+                    var di = json.feed.entry[i].gsx$id.$t;
+                    var na = json.feed.entry[i].gsx$name.$t;
+                    var ti = json.feed.entry[i].gsx$title.$t;
+                    var sn = json.feed.entry[i].gsx$sname.$t;
+                    var bf = json.feed.entry[i].gsx$fb.$t;
+                    var lk = json.feed.entry[i].gsx$link.$t;
+                    ids[i] = di;
+                    titles[i] = ti;
+                    names[i] = na;
+                    snames[i] = sn;
+                    fbs[i] = bf;
+                    links[i] = lk;
+                }
+            }
+            function TableList(){
+                str = '';input = 1;key = 0;
+                for(var i = 0;i < names.length; i++){
+                    if(key == 0 && input == ids[i])
+                    {
+                        str += '<div id="link'+ids[i]+'" class="ui little_title">'+titles[i]+'</div><div class="ui clearing divider"></div>'
+                        key = 1;input++;
+                    }
+                    str +='<div class="ui store_style segment"><div class="ui store_title">'
+                    str += names[i] + '</div><table class="ui table"><tbody><tr><td class="negative two wide column">系總幹</td><td>'
+                    str += snames[i] + '</td></tr><tr><td class="warning">系學會粉專</td><td><a href="'
+                    str += fbs[i]+'"><div class="ui facebook tiny button"><i class="facebook icon"></i>Facebook</div></a></td></tr><tr><td class="positive">系網連結</td><td><a href="'
+                    str += links[i] +'">Click me</a></td></tr></tbody></table></div><br/>'
+                    if(input == ids[i+1])
+                    {
+                        key = 0;
+                        str += '<br/>'
+                    }
+                }
+                $("#tablelist").html(str);
+            }
+        </script>
+
+        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0AhNuImmzoWQudHJJY0ktdEJtVWNDVlBPMFBkS1JaOHc/od6/public/values?alt=json-in-script&callback=test'>
+        </script>
+    </head>
+    <body>
+        <div id="bg" class="background frame">
+            <div class="real long stripe">
+                <div class="ui active inverted dimmer">
+                    <div class="ui text loader">Loading</div>
+                </div>
+            </div>
+        </div>
+        <div class="frame curtain">
+            <div id="top-menu" class="ui labeled icon secondary pointing ten item large labeled icon menu" style="display:none;">
+            </div>
+            <div class="ui page grid">
+                <h1 id="showoff-text" class="ui center header"></h1>
+            </div>
+            <div id="des" class="masthead des viewport-height stripe">
+                <div class="ui stackable page grid">
+                    <div class="ui large yellow inverted menu">
+                        <a class="item" href="#link1">
+                            <!-- <i class="home icon"></i> Home -->文學院
+                        </a>
+                        <a class="item" href="#link2">
+                            <!-- <i class="mail icon"></i> Messages -->農資學院
+                        </a>
+                        <a class="item" href="#link3">
+                            <!-- <i class="user icon"></i> Friends -->理學院
+
+                        </a>
+                        <a class="item" href="#link4">
+                            <!-- <i class="user icon"></i> Friends -->工學院
+                        </a>
+                        <a class="item" href="#link8">
+                            <!-- <i class="user icon"></i> Friends -->生命科學院
+                        </a>
+                        <a class="item" href="#link5">
+                            <!-- <i class="user icon"></i> Friends -->獸醫學院
+                        </a>
+                        <a class="item" href="#link6">
+                            <!-- <i class="user icon"></i> Friends -->管理學院
+                        </a>
+                        <a class="item" href="#link7">
+                            <!-- <i class="user icon"></i> Friends -->法政學院
+                        </a>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div id="tablelist">
+                    <!-- <div id="link1" class="ui little_title">法政學院</div>
+                    <div class="ui clearing divider"></div>
+                        <div class="ui little_content">中國文學系所</div>
+                        <span class="little_content1">系總幹 : 王一二</span>
+                        <span class="little_content2">系學會粉專<a href="#"><div class="ui facebook tiny button"><i class="facebook icon"></i>Facebook</div></a></span>
+                        <div class="ui divider"></div> -->
+                </div>
+                <script type='text/javascript'>TableList()</script>
+
+            </div>
+            <div id="footer" class="masthead footer stripe">
+                <div class="ui page one column grid">
+                    <div class="centerAligned column">
+                        <a target="_blank" href="http://nchusg.org/" class="ui us image blue label">
+                            <img src="http://i.imgur.com/zF2JgJ7s.jpg">
+                            國立中興大學學生會
+                        </a>
+                        <a href="mailto:nchusg20@gmail.com" class="ui us image blue label">
+                            <i class="mail icon"></i>
+                            nchusg20@gmail.com
+                            <!-- <div class="detail">使用 Email 聯絡我們</div> -->
+                        </a>
+                        <a href="tel:0422873181" class="ui us image blue label">
+                            <i class="call icon"></i>
+                            04-22873181 (245)
+                            <!-- <div class="detail">使用電話聯絡我們</div> -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.11/jquery.scrollTo.min.js"></script>
+        <script type="text/javascript" src="js/jt2html.min.js"></script>
+        <script type="text/javascript" src='js/site.js'></script>
+        <!-- google analytics -->
+        <script>
+        </script>
+
+    </body>
+</html>

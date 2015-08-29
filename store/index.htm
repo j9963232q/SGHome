@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>興奇天</title>
+
+		<!-- for Google -->
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+
+		<meta name="author" content="" />
+		<meta name="copyright" content="" />
+		<meta name="application-name" content="" />
+
+		<!-- for Facebook -->
+		<meta property="og:title" content="" />
+		<meta property="og:type" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:description" content="" />
+
+		<!-- for Twitter -->
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:description" content="" />
+		<meta name="twitter:image" content="" />
+
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+		<link rel="stylesheet" href="site.css">
+
+		<!-- justfont -->
+		<script type="text/javascript" src="js/justfont.js"></script>
+		<!-- timeline CSS -->
+        <link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+        <script type="text/javascript" src="http://cdn.knightlab.com/libs/timeline/latest/js/timeline-min.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <!-- BEGIN TimelineJS -->
+        <script type="text/javascript" src="http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>
+        <script>
+          $(document).ready(function() {
+            createStoryJS({
+              type:       'timeline',
+              width:      '100%',
+              height:     '650',
+              source:     'https://docs.google.com/spreadsheet/pub?key=0AihNoyAtfiqAdEFzX3pNckpybDVuVW96NHRBTkM4bUE&output=html',
+              embed_id:   'sg-poster'
+            });
+          });
+        </script>
+        <!-- END TimelineJS -->
+		<!-- JSSOR JS -->
+        <script type="text/javascript" src="js/jssor.js"></script>
+    	<script type="text/javascript" src="js/jssor.slider.js"></script>
+		<!-- BEGIN JSSOR JS -->
+    	<script>
+    	    jQuery(document).ready(function ($) {
+    	        var options = {
+    	            $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+    	            $ArrowNavigatorOptions: {                            //[Optional] Options which specifies how to animate caption
+    	                $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+    	                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+    	            },
+    	            $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+    	                $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+    	                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+    	                $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
+    	                $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+    	                $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+    	                $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+    	            }
+    	        };
+    	        var jssor_slider2 = new $JssorSlider$("slider2_container", options);
+    	        //responsive code begin
+    	        function ScaleSlider() {
+    	            //reserve blank width for margin+padding: margin+padding-left (10) + margin+padding-right (10)
+    	            var paddingWidth = 20;
+    	            //minimum width should reserve for text
+    	            var minReserveWidth = 225;
+    	            var parentElement = jssor_slider2.$Elmt.parentNode;
+    	            //evaluate parent container width
+    	            var parentWidth = parentElement.clientWidth;
+    	            if (parentWidth) {
+    	                //exclude blank width
+    	                var availableWidth = parentWidth - paddingWidth;
+    	                //calculate slider width as 70% of available width
+    	                var sliderWidth = availableWidth * 0.9;
+    	                //slider width is maximum 600
+    	                sliderWidth = Math.min(sliderWidth, 910);
+    	                //slider width is minimum 200
+    	                sliderWidth = Math.max(sliderWidth, 200);
+    	                var clearFix = "none";
+    	                //evaluate free width for text, if the width is less than minReserveWidth then fill parent container
+    	                if (availableWidth - sliderWidth < minReserveWidth) {
+    	                    //set slider width to available width
+    	                    sliderWidth = availableWidth;
+    	                    //slider width is minimum 200
+    	                    sliderWidth = Math.max(sliderWidth, 200);
+    	                    clearFix = "both";
+    	                }
+    	                //clear fix for safari 3.1, chrome 3
+    	                $('#clearFixDiv').css('clear', clearFix);
+    	                jssor_slider2.$ScaleWidth(sliderWidth);
+    	            }
+    	            else
+    	                window.setTimeout(ScaleSlider, 30);
+    	        }
+    	        ScaleSlider();
+    	        if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+    	            $(window).bind('resize', ScaleSlider);
+    	        }
+    	        //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+    	        //    $(window).bind("orientationchange", ScaleSlider);
+    	        //}
+    	        //responsive code end
+    	    });
+    	</script>
+		<!-- Bullet Navigator Skin Begin -->
+		<style>
+		    .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av
+		    {
+		        background: url(img/b20.png) no-repeat;
+		        overflow:hidden;
+		        cursor: pointer;
+		    }
+		    .jssorb03 div { background-position: -5px -4px; }
+		    .jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
+		    .jssorb03 .av { background-position: -65px -4px; }
+		    .jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
+		</style>
+		<!-- Arrow Navigator Skin Begin -->
+		<style>
+		    .jssora03l, .jssora03r, .jssora03ldn, .jssora03rdn
+		    {
+		        position: absolute;
+		        cursor: pointer;
+		        display: block;
+		        background: url(img/a10.png) no-repeat;
+		        overflow:hidden;
+		    }
+		    .jssora03l { background-position: -3px -33px; }
+		    .jssora03r { background-position: -63px -33px; }
+		    .jssora03ldn { background-position: -243px -33px; }
+		    .jssora03rdn { background-position: -303px -33px; }
+		</style>
+    	<!-- END JSSOR JS -->
+    	<!--google spreadsheet data base for JSSOR images-->
+    	<script>
+    	    var names = new Array();
+    	    var image = new Array();
+    	    var link = new Array();
+    	    function test(json) {
+    	        for (var i = 0; i < json.feed.entry.length; i++) {
+    	            var na = json.feed.entry[i].gsx$name.$t;
+    	            var is = json.feed.entry[i].gsx$imagesource.$t;
+    	            var lk = json.feed.entry[i].gsx$link.$t;
+    	            names[i] = na;
+    	            image[i] = is;
+    	            link[i] = lk;
+    	        }
+    	    }
+    	    function TableList(){
+    	        str = '';
+    	        for(var i = 0;i < names.length; i++){
+    	            str +='<div><img u="image" src="' + image[i] + '"/></div>';
+    	        }
+    	        $("#tablelist").html(str);
+    	    }
+    	</script>
+    	<script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0AhNuImmzoWQudFh5c05YMVcxVkUtM2pQdnVhRkh5VEE/od6/public/values?alt=json-in-script&callback=test'>
+    	</script>
+
+        <script type="text/javascript">
+            $(document)
+                .ready(function() {
+                    $('#g1')
+                        .modal('attach events', '#g11','show dimmer,show');
+                    $('#g2')
+                        .modal('attach events', '#g22','show dimmer,show');
+                    $('#g3')
+                        .modal('attach events', '#g33','show dimmer,show');
+                    $('#g4')
+                        .modal('attach events', '#g44','show dimmer,show');
+                    $('#g5')
+                        .modal('attach events', '#g55','show dimmer,show');
+                    $('#g6')
+                        .modal('attach events', '#g66','show dimmer,show');
+                });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#change_g").click(function() {
+                    $('.ui.shape')
+                        .eq(0)
+                            .shape('flip up')
+                            .end()
+                        .eq(1)
+                            .shape('flip down')
+                            .end()
+                        .eq(2)
+                            .shape('flip up')
+                });
+            });
+        </script>
+        
+        <!--google spreadsheet data base-->
+        <script>
+            alert("fuc~~k");
+
+            var namess = new Array();
+            var times = new Array();
+            var imgss = new Array();
+            var heads = new Array();
+            var contents = new Array();
+            var numbers = new Array();
+            var number2s = new Array();
+            var fees = new Array();
+
+            function test1(json) {
+                for (var i = 0; i < json.feed.entry.length; i++) {
+            alert("fuck");
+
+                    var naa = json.feed.entry[i].gsx$name.$t;
+                    var igg = json.feed.entry[i].gsx$image.$t;
+                    var he = json.feed.entry[i].gsx$head.$t;
+                    var co = json.feed.entry[i].gsx$content.$t;
+                    var ti = json.feed.entry[i].gsx$time.$t;
+                    var fe = json.feed.entry[i].gsx$fee.$t;
+                    var nu = json.feed.entry[i].gsx$number.$t;
+                    var nu2 = json.feed.entry[i].gsx$number2.$t;
+                    namess[i] = naa;
+                    imgss[i] = igg;
+                    heads[i] = he;
+                    contents[i] = co;
+                    times[i] = ti;
+                    fees[i] = fe;
+                    numbers[i] = nu;
+                    number2s[i] = nu2;
+                }
+            }
+            function GroupList(){
+                tes = '';
+                for(var i = 0;i < namess.length; i += 2){
+                    tes +='<div class="five wide column ">';
+                    tes +='<div class="ui button" style="padding:0px;"';
+                    tes +='<div class="ui shape">';
+                    tes +='<div class="sides">';
+                    tes +='<div id="' + number2s[i] + '" class="side active">';
+                    tes +='<div class="ui card">';
+                    tes +='<div class="image">';
+                    tes +='<img class="ui medium rounded image" src="' + imgss[i] + '"></div>';
+                    tes +='<div class="content" style="background-color:#585858;">';
+                    tes +='<div class="header">' + namess[i] + '</div></div></div></div>';
+                    tes +='<div id="' + number2s[i+1] + '" class="side">';
+                    tes +='<div class="ui card">';
+                    tes +='<div class="image">';
+                    tes +='<img class="ui medium rounded image" src="' + imgss[i+1] + '"></div>';
+                    tes +='<div class="content" style="background-color:#585858;">';
+                    tes +='<div class="header">' + namess[i+1] + '</div></div></div></div></div></div></div></div>';
+                }
+                // tes = '';
+                // for(var i = 0;i < namess.length;i++){
+                //     tes +='<div id="' + numbers[i] + '" class="ui tesal">'
+                //     tes +='<i class="close icon"></i>'
+                //     tes +='<div class="header">' + namess[i] + '</div>'
+                //     tes +='<div class="content"><div class="ui large image"><img src="' + imgss[i] + '">
+                //             </div>'
+                //     tes +='<div class="description"><div class="ui header">' + heads[i] + '</div>'
+                //     tes +='<p>' + contents[i] + '</p>'
+                //     tes +='<p>時間: ' + times[i] + '</p>'
+                //     tes +='<p>價格: ' + fees[i] + '</p></div></div></div>'
+                // }
+                $("#grouplist").html(tes);
+            }
+        </script>
+        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0AhNuImmzoWQudDhlYkdFRUc2SDBCM21RT056NV9vamc/od6/public/values?alt=json-in-script&callback=test1'>
+        </script>
+	</head>
+	<body>
+		<div id="bg" class="background frame">
+			<div class="real long stripe">
+				<div class="ui active inverted dimmer">
+					<div class="ui text loader">Loading</div>
+				</div>
+			</div>
+		</div>
+		<div id="filter" class="filter frame"></div>
+		<div class="frame curtain">
+			<div id="index" class="real index ">
+				<div id="top-menu" class="ui labeled icon secondary pointing ten item large labeled icon menu" style="display:none;">
+				</div>
+				<div class="ui stackable page grid">
+					<div class="sixteen wide column">
+						<!-- Jssor Slider Begin -->
+				        <div id="slider2_container" style="position:relative;margin: 0px 0px 0px 0px;width: 910px;height: 430px; overflow: hidden;">
+				            <!-- Slides Container -->
+				            <div id="tablelist" u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 910px; height: 430px;
+				                overflow: hidden;">
+				                <script type='text/javascript'>TableList()</script>
+				            </div>
+				            <!-- bullet navigator container -->
+				            <div u="navigator" class="jssorb03" style="position: absolute; bottom: 4px; left: 6px;">
+				                <!-- bullet navigator item prototype -->
+				                <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+				            </div>
+				            <!-- Bullet Navigator Skin End -->
+
+				            <!-- Arrow Left -->
+				            <span u="arrowleft" class="jssora03l" style="width: 55px; height: 55px; top: 113px; left: 8px;">
+				            </span>
+				            <!-- Arrow Right -->
+				            <span u="arrowright" class="jssora03r" style="width: 55px; height: 55px; top: 113px; right: 8px">
+				            </span>
+				            <!-- Arrow Navigator Skin End -->
+				        </div>
+						<h3 class="ui center header">&nbsp;</h3>
+						<h3 class="ui center header">&nbsp;</h3>
+						<h1 id="showoff-text" class="ui center header"></h1>
+					</div>
+					<!-- <div class="six wide column">
+						<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fnchusg&amp;width&amp;height=395&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=false" scrolling="no" frameborder="0" style="width:100%;border:none; overflow:hidden; height:395px;" allowTransparency="true"></iframe>
+					</div> -->
+				</div>
+			</div>
+			<div id="des" class="masthead des viewport-height stripe">
+				<!-- <div id="slide-ctl" class="ui stackable four column page grid" style="display:none;"></div> -->
+				<div class="ui stackable page grid">
+                    <div>
+                        <h1>社團活動專區</h1>
+                        <span id="change_g"class="ui tiny teal button">Next</span>
+                    </div>
+                </div>
+                <div id="grouplist" class="ui stackable page grid">
+                    <script type='text/javascript'>GroupList()</script>
+                    <!-- <div class="five wide column">
+                        <div class="ui button"style="padding:0px;">
+                            <div class="ui shape">
+                                <div class="sides">
+                                    <div id="g11" class="side active">
+                                        <div class="ui card">
+                                            <div class="image">
+                                                    <img class="ui medium rounded image" src="img/1.jpg">
+                                            </div>
+                                            <div class="content" style="background-color:#585858;">
+                                                <div class="header"style="color:#996600;">cute dog</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="g22" class="side">
+                                        <div class="ui card">
+                                            <div class="image">
+                                                    <img class="ui medium rounded image" src="img/2.jpg">
+                                            </div>
+                                            <div class="content" style="background-color:#585858;">
+                                                <div class="header"style="color:#996600;">cute dog</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <div class="ui button"style="padding:0px;">
+                            <div class="ui shape">
+                                <div class="sides">
+                                    <div id="g11" class="side active">
+                                        <div class="ui card">
+                                            <div class="image">
+                                                    <img class="ui medium rounded image" src="img/1.jpg">
+                                            </div>
+                                            <div class="content" style="background-color:#585858;">
+                                                <div class="header"style="color:#996600;">cute dog</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="g22" class="side">
+                                        <div class="ui card">
+                                            <div class="image">
+                                                    <img class="ui medium rounded image" src="img/2.jpg">
+                                            </div>
+                                            <div class="content" style="background-color:#585858;">
+                                                <div class="header"style="color:#996600;">cute dog</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <div class="ui button"style="padding:0px;">
+                            <div class="ui shape">
+                                <div class="sides">
+                                    <div id="g11" class="side active">
+                                        <div class="ui card">
+                                            <div class="image">
+                                                    <img class="ui medium rounded image" src="img/1.jpg">
+                                            </div>
+                                            <div class="content" style="background-color:#585858;">
+                                                <div class="header"style="color:#996600;">cute dog</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="g22" class="side">
+                                        <div class="ui card">
+                                            <div class="image">
+                                                    <img class="ui medium rounded image" src="img/2.jpg">
+                                            </div>
+                                            <div class="content" style="background-color:#585858;">
+                                                <div class="header"style="color:#996600;">cute dog</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div id="g1" class="ui modal">
+                        <i class="close icon"></i>
+                        <div class="header">cute dog</div>
+                        <div class="content">
+                            <div class="ui large image">
+                                <img src="img/1.jpg">
+                            </div>
+                            <div class="description">
+                                <div class="ui header">We've auto-chosen a profile image for you.</div>
+                                <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                                <p>Is it okay to use this photo?</p>
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <div class="ui black button">Nope</div>
+                            <div class="ui positive right labeled icon button">
+                                Yep, that's me
+                                <i class="checkmark icon"></i>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+                <div class="ui stackable page grid">
+                    <div class="sixteen wide column ">
+                        <h1 class="centerAligned">學生會公佈欄</h1>
+                        <table class="ui unstackable table">
+                            <thead>
+                                <tr>
+                                    <th class="three wide"></th>
+                                    <th class="eight wide "></th>
+                                    <th class="five wide "></th>
+                                </tr>
+                            </thead>
+                            <script type='text/javascript' src='http://app.nchusg.org/news/index.php?key=ce04b57d60f9c918d68bdc1de0458a14&cid=0&rows=6'></script>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+    			<!--Timeline.js-->
+    			<div class="viewport-height stripe">
+    				<div id="sg-poster"></div>
+    			</div>
+    			<!-- <div class="masthead viewport-height stripe">
+    			</div> -->
+    			<div id="footer" class="masthead footer stripe">
+    				<div class="ui page one column grid">
+    					<div class="centerAligned column">
+    						<a target="_blank" href="http://nchusg.org/" class="ui us image blue label">
+    							<img src="http://i.imgur.com/zF2JgJ7s.jpg">
+    							國立中興大學學生會
+    						</a>
+    						<a href="mailto:nchusg20@gmail.com" class="ui us image blue label">
+    							<i class="mail icon"></i>
+    							nchusg20@gmail.com
+    							<div class="detail">使用 Email 聯絡我們</div>
+    						</a>
+    						<a href="tel:0422873181" class="ui us image blue label">
+    							<i class="call icon"></i>
+    							04-22840245
+    							<div class="detail">使用電話聯絡我們</div>
+    						</a>
+    					</div>
+    				</div>
+    			</div>
+		    </div>
+
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.11/jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="js/jt2html.min.js"></script>
+		<script type="text/javascript" src='js/site.js'></script>
+		<!-- google analytics -->
+		<script>
+		</script>
+
+	</body>
+</html>

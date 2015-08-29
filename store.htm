@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>興大學生會</title>
+
+        <!-- for Google -->
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <meta name="author" content="" />
+        <meta name="copyright" content="" />
+        <meta name="application-name" content="" />
+
+        <!-- for Facebook -->
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- for Twitter -->
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:image" content="" />
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+        <link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+        <link rel="stylesheet" href="site.css">
+
+        <!-- justfont -->
+        <script type="text/javascript" src="js/justfont.js"></script>
+        <!-- timeline CSS -->
+        <link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+        <script type="text/javascript" src="http://cdn.knightlab.com/libs/timeline/latest/js/timeline-min.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <!-- JSSOR JS -->
+        <script type="text/javascript" src="js/jssor.js"></script>
+        <script type="text/javascript" src="js/jssor.slider.js"></script>
+        <!-- BEGIN JSSOR JS -->
+        <script>
+            jQuery(document).ready(function ($) {
+                var options = {
+                    $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                    $ArrowNavigatorOptions: {                            //[Optional] Options which specifies how to animate caption
+                        $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                        $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    },
+                    $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                        $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                        $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                        $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
+                        $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                        $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                        $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                    }
+                };
+                var jssor_slider2 = new $JssorSlider$("slider2_container", options);
+                //responsive code begin
+                function ScaleSlider() {
+                    //reserve blank width for margin+padding: margin+padding-left (10) + margin+padding-right (10)
+                    var paddingWidth = 20;
+                    //minimum width should reserve for text
+                    var minReserveWidth = 200;
+                    var parentElement = jssor_slider2.$Elmt.parentNode;
+                    //evaluate parent container width
+                    var parentWidth = parentElement.clientWidth;
+                    if (parentWidth) {
+                        //exclude blank width
+                        var availableWidth = parentWidth - paddingWidth;
+                        //calculate slider width as 70% of available width
+                        var sliderWidth = availableWidth * 0.9;
+                        //slider width is maximum 600
+                        sliderWidth = Math.min(sliderWidth, 910);
+                        //slider width is minimum 200
+                        sliderWidth = Math.max(sliderWidth, 100);
+                        var clearFix = "none";
+                        //evaluate free width for text, if the width is less than minReserveWidth then fill parent container
+                        if (availableWidth - sliderWidth < minReserveWidth) {
+                            //set slider width to available width
+                            sliderWidth = availableWidth;
+                            //slider width is minimum 200
+                            sliderWidth = Math.max(sliderWidth, 100);
+                            clearFix = "both";
+                        }
+                        //clear fix for safari 3.1, chrome 3
+                        $('#clearFixDiv').css('clear', clearFix);
+                        jssor_slider2.$ScaleWidth(sliderWidth);
+                    }
+                    else
+                        window.setTimeout(ScaleSlider, 30);
+                }
+                ScaleSlider();
+                if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                    $(window).bind('resize', ScaleSlider);
+                }
+                //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+                //    $(window).bind("orientationchange", ScaleSlider);
+                //}
+                //responsive code end
+            });
+        </script>
+        <!-- Bullet Navigator Skin Begin -->
+        <style>
+            .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av
+            {
+                background: url(img/b20.png) no-repeat;
+                overflow:hidden;
+                cursor: pointer;
+            }
+            .jssorb03 div { background-position: -5px -4px; }
+            .jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
+            .jssorb03 .av { background-position: -65px -4px; }
+            .jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
+        </style>
+        <!-- Arrow Navigator Skin Begin -->
+        <style>
+            .jssora03l, .jssora03r, .jssora03ldn, .jssora03rdn
+            {
+                position: absolute;
+                cursor: pointer;
+                display: block;
+                background: url(img/a10.png) no-repeat;
+                overflow:hidden;
+            }
+            .jssora03l { background-position: -3px -33px; }
+            .jssora03r { background-position: -63px -33px; }
+            .jssora03ldn { background-position: -243px -33px; }
+            .jssora03rdn { background-position: -303px -33px; }
+        </style>
+        <!-- END JSSOR JS -->
+        <!--google spreadsheet data base for JSSOR images-->
+        <script>
+            var names = new Array();
+            var image = new Array();
+            var link = new Array();
+            function test(json) {
+                for (var i = 0; i < json.feed.entry.length; i++) {
+                    var na = json.feed.entry[i].gsx$name.$t;
+                    var is = json.feed.entry[i].gsx$imagesource.$t;
+                    var lk = json.feed.entry[i].gsx$link.$t;
+                    names[i] = na;
+                    image[i] = is;
+                    link[i] = lk;
+                }
+            }
+            function TableList(){
+                str = '';
+                for(var i = 0;i < names.length; i++){
+                    str +='<div><a href="'+link[i]+'"><img u="image" src="' + image[i] + '"></a></div>';
+                }
+                $("#tablelist").html(str);
+            }
+        </script>
+        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0AhNuImmzoWQudHl2WjJzZ3JPc1kwUmxXbTBtSmV2MHc/od6/public/values?alt=json-in-script&callback=test'>
+        </script>
+
+    </head>
+    <body>
+        <div id="bg" class="background frame">
+            <div class="real long stripe">
+                <div class="ui active inverted dimmer">
+                    <div class="ui text loader">Loading</div>
+                </div>
+            </div>
+        </div>
+        <!-- <div id="filter" class="filter frame"></div> -->
+        <div class="frame curtain">
+            <div id="top-menu" class="ui labeled icon secondary pointing ten item large labeled icon menu" style="display:none;">
+            </div>
+            <div class="ui page grid">
+                <h1 id="showoff-text" class="ui center header"></h1>
+            </div>
+            <div id="des" class="masthead des viewport-height stripe">
+                <div class="ui stackable page grid">
+                    <!-- <div class="sixteen wide column"> -->
+                        <!-- Jssor Slider Begin -->
+                        <div id="slider2_container" style="position:relative;width: 910px;height: 430px; overflow: hidden;"class="centerized">
+                            <!-- Slides Container -->
+                            <div id="tablelist" u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 910px; height: 430px;
+                                overflow: hidden;">
+                                <script type='text/javascript'>TableList()</script>
+                            </div>
+                            <!-- bullet navigator container -->
+                            <div u="navigator" class="jssorb03" style="position: absolute; bottom: 4px; left: 6px;">
+                                <!-- bullet navigator item prototype -->
+                                <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+                            </div>
+                            <!-- Bullet Navigator Skin End -->
+
+                            <!-- Arrow Left -->
+                            <span u="arrowleft" class="jssora03l" style="width: 55px; height: 55px; top: 113px; left: 8px;">
+                            </span>
+                            <!-- Arrow Right -->
+                            <span u="arrowright" class="jssora03r" style="width: 55px; height: 55px; top: 113px; right: 8px">
+                            </span>
+                            <!-- Arrow Navigator Skin End -->
+                        </div>
+                        <br/>
+                    <!-- </div> -->
+                </div>
+                <br/>
+                <br/>
+                <div class="ui centerized four doubling cards">
+                    <div class="ui pink card">
+                        <a class="ui corner red label"><i class="heart icon"></i></a>
+                        <a class="image" href="http://new.nchusg.org/store/food/1.htm">
+                            <img src="img/food.png">
+                        </a>
+                        <div class="content" style="background-color:pink;">
+                            <div class="header centerAligned">美食誘惑篇</div>
+                        </div>
+                    </div>
+                    <div class="ui card">
+                        <a class="ui corner red label"><i class="heart icon"></i></a>
+                        <a class="image" href="http://new.nchusg.org/store/life/1.htm">
+                            <img src="img/globe-green.png">
+                        </a>
+                        <div class="content" style="background-color:yellow;">
+                            <div class="header centerAligned">生活資訊篇</div>
+                        </div>
+                    </div>
+                    <div class="ui card">
+                        <a class="ui corner red label"><i class="heart icon"></i></a>
+                        <a class="image" href="http://new.nchusg.org/store/company/1.htm">
+                            <img src="img/company.png">
+                        </a>
+                        <div class="content" style="background-color:orange;">
+                            <div class="header  centerAligned">連鎖企業篇</div>
+                        </div>
+                    </div>
+                    <div class="ui card">
+                        <a class="ui corner red label"><i class="heart icon"></i></a>
+                        <a class="image" href="http://new.nchusg.org/store/hospital/1.htm">
+                            <img src="img/hospital1.png">
+                        </a>
+                        <div class="content" style="background-color:purple;">
+                            <div class="header  centerAligned">醫療服務篇</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer" class="masthead footer stripe">
+                <div class="ui page one column grid">
+                    <div class="centerAligned column">
+                        <a target="_blank" href="http://nchusg.org/" class="ui us image blue label">
+                            <img src="http://i.imgur.com/zF2JgJ7s.jpg">
+                                國立中興大學學生會
+                        </a>
+                        <a href="mailto:nchusg20@gmail.com" class="ui us image blue label">
+                            <i class="mail icon"></i>
+                            nchusg20@gmail.com
+                            <!-- <div class="detail">使用 Email 聯絡我們</div> -->
+                        </a>
+                        <a href="tel:0422873181" class="ui us image blue label">
+                            <i class="call icon"></i>
+                            04-22840245
+                            <!-- <div class="detail">使用電話聯絡我們</div> -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.11/jquery.scrollTo.min.js"></script>
+        <script type="text/javascript" src="js/jt2html.min.js"></script>
+        <script type="text/javascript" src='js/site.js'></script>
+        <!-- google analytics -->
+        <script>
+        </script>
+
+    </body>
+</html>
