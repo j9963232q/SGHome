@@ -507,13 +507,105 @@
         </script>
         <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0AhNuImmzoWQudDhlYkdFRUc2SDBCM21RT056NV9vamc/od7/public/values?alt=json-in-script&callback=test2'>
         </script>
-
-        
+        <style type="text/css">
+            #side{
+                position: absolute;
+                left: 0;
+                top: 30%;
+                width:10%;
+                z-index: 100;
+            }
+            .side_tag{
+                width: 50%;
+                height: 50px;
+                background-color: black;
+                border-top: 2px solid #CECEF6;
+                border-bottom:2px solid #CECEF6;
+            }
+            #event_area {
+                width: 300px;
+                background-color: #08088A;
+                padding: 20px 20px 0 20px;
+                position: absolute;
+                top:50px;
+                left: -280px;
+                z-index: 120;
+                font-family: "標楷體";
+                font-weight: 900;
+            }
+        </style>
+        <link href="css/site.css" rel="stylesheet">
+        <script src="javascripts/jquery-1.7.2.min.js"></script>
+        <!-- 側邊欄拉出特效 -->
+        <script src="javascripts/jquery.easing.1.3.js"></script>
+        <script type="text/javascript">
+            function sideTagOut(){
+                $('#event_area').stop().animate(
+                {
+                    left: '0',
+                    backgroundColor: 'rgb(255,255,255)'
+                },
+                500
+               
+                ); // end animate
+             }
+             function sideTagIn() {
+                 $('#event_area').stop().animate(
+                {
+                    left: '-315px',
+                    backgroundColor: 'rgb(110,138,195)'
+                },
+                1500
+                
+                ); // end animate
+             }
+            $(document).ready(function(){
+                
+                $('.side_tag').click(
+                    function(){
+                        $('#event_area').stop().animate(
+                        {
+                            left: '0',
+                            backgroundColor: 'rgb(255,255,255)'
+                        },
+                        500
+                       
+                        ); // end animate
+                    }
+                    
+                );
+            });
+            
+        </script>
 
 
 
 	</head>
 	<body>
+    <div id="event_area">
+                
+            </div>
+        <div id="side">
+            
+            <div class="side_tag" id="">
+                
+            </div>
+            <div class="side_tag" id="">
+                
+            </div>
+            <div class="side_tag" id="">
+                
+            </div>
+            <div class="side_tag" id="">
+                
+            </div>
+            <div class="side_tag" id="">
+                
+            </div>
+            <div class="side_tag" id="">
+                
+            </div>
+        </div>
 		<div id="bg" class="background frame">
 			<div class="real long stripe">
 				<div class="ui active inverted dimmer">

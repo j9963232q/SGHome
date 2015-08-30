@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test</title>
+        <!-- 必引入的檔案 -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" >
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <style>
+            body{
+                font-family: "微軟正黑體"
+            }
+            #side{
+                position: absolute;
+                left: 0;
+                top: 30%;
+                width:10%;
+            }
+            .side_tag{
+                cursor: pointer;
+                color: white;
+                font-size: 22px;
+                padding: 5px 0 5px 0;
+                width: 50%;
+                height: 50px;
+                background-color: black;
+                border-top: 2px solid #CECEF6;
+                border-bottom:2px solid #CECEF6;
+                left: -10px;
+            }
+            .side_tag:hover{
+                color: black;
+                font-size: 22px;
+                padding: 5px 0 5px 0;
+                width: 50%;
+                height: 50px;
+                background-color: white;
+                border-top: 2px solid #CECEF6;
+                border-bottom:2px solid #CECEF6;
+                left: -10px;
+            }
+            #event_area {
+                width: 300px;
+                background-color: white;
+                padding: 20px 20px 0 20px;
+                position: absolute;
+                top:0;
+                height: 100%;
+                left: -270px;
+                z-index: -1;
+            }
+            .dayevent{
+                position: absolute;
+                width: 80%;
+                top: 0;
+                height: 100%;
+                right: 0%;
+                display: none;
+                overflow:scroll;
+            }
+            .btnbox{
+                width: 3px;
+                cursor: pointer;
+            }
+            #ccs{
+                position: absolute;
+                top: 15%;
+                left: 20%;
+            }
+            #cse{
+                position: absolute;
+                top: 20%;
+                left: 70%;
+            }
+            #map{
+                position: absolute;
+                left: 20%;
+                top: 10%;
+                background-color: orange;
+                width: 60%;
+                height: 80%;
+            }
+            #schmap{
+                width: 100%;
+                height: 100%;
+            }
+            .round{
+              width:16px;
+              height:16px;
+              display:inline-block;
+              font-size:20px; /* 修改圆点的大小 */
+              text-align:center;
+              text-decoration:none;
+              color:#F00; /* 修改圆点的颜色 */
+            }
+            .round:hover{
+              margin-left:-5px;
+              margin-top:-8px;
+              width:16px;
+              height:16px;
+              display:inline-block;
+              font-size:30px; /* 修改圆点的大小 */
+              text-align:center;
+              text-decoration:none;
+              color:yellow; /* 修改圆点的颜色 */
+            }
+            .wrapper{
+                width: 1000px;
+                height:1000px;
+            }
+        </style>    
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('[data-toggle="tooltip"]').tooltip()
+                var mode="",target;
+                $('.side_tag').click(
+                    function()
+                    {
+                        target="2"+$(this).attr('id');
+                        mode=sideIO(mode,target)
+                    }
+                );
+                $('#wrapper').click(
+                    function()
+                    {
+                       mode=sideIn();
+                    }
+                );
+            });
+            var sideIO=function(mode,target){
+                if(mode=="")
+                {
+                    $('#event_area').stop().animate(
+                    {
+                        left: '0',
+                        backgroundColor: 'rgb(255,255,255)'
+                    },
+                    500
+                    ); // end animate
+                    $('.dayevent').hide();
+                    mode=target;
+                    $('div[id$="'+target+'"]').fadeIn(500);
+                    return mode;
+                }
+                else if(mode==target)
+                {
+                    $('#event_area').stop().animate(
+                    {
+                        left: '-270px',
+                        backgroundColor: 'rgb(110,138,195)'
+                    },
+                    500
+                    ); // end animate
+                    $('.dayevent').fadeOut(500);
+                    mode="";
+                    return mode;
+                }
+                else
+                {
+                    $('.dayevent').hide();
+                    mode=target;
+                    $('div[id$="'+target+'"]').fadeIn(500);
+                    return mode;
+                }  
+            };
+            var sideIn=function(){
+                    $('#event_area').stop().animate(
+                    {
+                        left: '-270px',
+                        backgroundColor: 'rgb(110,138,195)'
+                    },
+                    500
+                    ); // end animate
+                    $('.dayevent').fadeOut(500);
+                    mode="";
+                    return mode;
+                };
+        </script>
+    </head>
+    <body>
+        <div id="side">
+            <div id="event_area">
+                <div class="dayevent" id="21">
+                    <img class="" src="img/1.jpg">
+                </div>
+                <div class="dayevent" id="22">
+                    <img src="img/2.jpg" >
+                </div>
+            </div>
+            <div class="side_tag" id="1">
+                    星期一
+            </div>
+            <div class="side_tag" id="2">
+                星期二
+            </div>
+            <div class="side_tag" id="">
+                星期三
+            </div>
+            <div class="side_tag" id="">
+                星期四
+            </div>
+            <div class="side_tag" id="">
+                星期五
+            </div>
+            <div class="side_tag" id="">
+                星期六
+            </div>
+            <div class="side_tag" id="">
+                星期日
+            </div>
+        </div>
+        <div id="wrapper">
+            <div id="map">
+                <img id="schmap" src="img/camp.jpg">
+            <!-- Button trigger modal -->
+            
+                <div id="cse" class="btnbox" data-toggle="tooltip" data-placement="bottom" title="123">
+                    <a class="round" data-toggle="modal"  data-target="#myModal"  data-placement="bottom">●</a>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+                <div id="ccs" class="btnbox" data-toggle="tooltip" data-placement="bottom" title="123">
+                    <a class="round" data-toggle="modal"  data-target="#myModal2"  data-placement="bottom">●</a>
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                      </div>
+                      <div class="modal-body">
+                        53453
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+            </div>
+        </div>
+    </body>
+</html>
