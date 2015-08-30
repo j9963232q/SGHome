@@ -4,10 +4,11 @@
         <meta charset="utf-8">
         <title>test</title>
         <!-- 必引入的檔案 -->
-        <link rel="stylesheet" href="css/bootstrap.min.css" >
+        <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="javascripts/bootstrap.min.js"></script>
+        <!-- // <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script> -->
         <style>
             body{
                 font-family: "微軟正黑體"
@@ -16,27 +17,16 @@
                 position: absolute;
                 left: 0;
                 top: 30%;
-                width:10%;
+                width:90px;
             }
             .side_tag{
                 cursor: pointer;
                 color: white;
                 font-size: 22px;
-                padding: 5px 0 5px 0;
-                width: 50%;
-                height: 50px;
+                padding: 5px 0px 5px 10px;
+                width: 100%;
+                height: 20%;
                 background-color: black;
-                border-top: 2px solid #CECEF6;
-                border-bottom:2px solid #CECEF6;
-                left: -10px;
-            }
-            .side_tag:hover{
-                color: black;
-                font-size: 22px;
-                padding: 5px 0 5px 0;
-                width: 50%;
-                height: 50px;
-                background-color: white;
                 border-top: 2px solid #CECEF6;
                 border-bottom:2px solid #CECEF6;
                 left: -10px;
@@ -60,6 +50,13 @@
                 display: none;
                 overflow:scroll;
             }
+            .dayevent img{
+                width: 100%;
+                top: 0;
+                height: 50%;
+                right: 0%;
+                cursor: pointer;
+            }
             .btnbox{
                 width: 3px;
                 cursor: pointer;
@@ -76,15 +73,9 @@
             }
             #map{
                 position: absolute;
-                left: 20%;
+                left: 30%;
                 top: 10%;
                 background-color: orange;
-                width: 60%;
-                height: 80%;
-            }
-            #schmap{
-                width: 100%;
-                height: 100%;
             }
             .round{
               width:16px;
@@ -110,16 +101,41 @@
                 width: 1000px;
                 height:1000px;
             }
+            .abstract_box{
+                width: 100%;
+                height:100%;
+            }
         </style>    
         <script type="text/javascript">
             $(document).ready(function(){
+                // 啟用不同的提示窗(tooltip)
                 $('[data-toggle="tooltip"]').tooltip()
-                var mode="",target;
+                // 控制側邊欄
+                var mode="",target,target1,k=0;
                 $('.side_tag').click(
                     function()
                     {
-                        target="2"+$(this).attr('id');
-                        mode=sideIO(mode,target)
+                        target=$(this).attr('id');
+                        target1="2"+$(this).attr('id');
+                        mode=sideIO(mode,target,target1)
+                    }
+                );
+                $('.side_tag').hover(
+                    function()
+                    {
+                        $(this).css('background-color','white');
+                        $(this).css('color','black');
+                    },
+                    function()
+                    {
+                        $('.side_tag').css('background-color','black');
+                        $('.side_tag').css('color','white');
+                        if(mode!="")
+                        {
+                           $('div[id="'+target+'"]').css('background-color','white');
+                           $('div[id="'+target+'"]').css('color','black');  
+                        }
+                        
                     }
                 );
                 $('#wrapper').click(
@@ -128,10 +144,15 @@
                        mode=sideIn();
                     }
                 );
+                // 當網頁載入完
             });
-            var sideIO=function(mode,target){
+            // 控制側邊欄的顯現與關閉
+            var sideIO=function(mode,target,target1){
+                // 第一次按側邊欄
                 if(mode=="")
                 {
+                    $(this).css('background-color','white');
+                    $(this).css('color','black');
                     $('#event_area').stop().animate(
                     {
                         left: '0',
@@ -140,11 +161,12 @@
                     500
                     ); // end animate
                     $('.dayevent').hide();
-                    mode=target;
-                    $('div[id$="'+target+'"]').fadeIn(500);
+                    mode=target1;
+                    $('div[id$="'+target1+'"]').fadeIn(500);
                     return mode;
                 }
-                else if(mode==target)
+                // 如果連續按同一個按鈕
+                else if(mode==target1)
                 {
                     $('#event_area').stop().animate(
                     {
@@ -157,22 +179,23 @@
                     mode="";
                     return mode;
                 }
+                // 如果第一次和第二次click的按鈕不同
                 else
                 {
+                    $('.side_tag').css('background-color','black');
+                    $('.side_tag').css('color','white');
+                    $('div[id="'+target+'"]').css('background-color','white');
+                    $('div[id="'+target+'"]').css('color','black');
                     $('.dayevent').hide();
-                    mode=target;
-                    $('div[id$="'+target+'"]').fadeIn(500);
+                    mode=target1;
+                    $('div[id$="'+target1+'"]').fadeIn(500);
                     return mode;
                 }  
             };
+            // 當click側邊欄以外的區域,關閉側邊欄
             var sideIn=function(){
-                    $('#event_area').stop().animate(
-                    {
-                        left: '-270px',
-                        backgroundColor: 'rgb(110,138,195)'
-                    },
-                    500
-                    ); // end animate
+                    $('.side_tag').css('background-color','black');
+                    $('.side_tag').css('color','white');
                     $('.dayevent').fadeOut(500);
                     mode="";
                     return mode;
@@ -180,17 +203,22 @@
         </script>
     </head>
     <body>
+    <!-- 側邊欄 -->
         <div id="side">
             <div id="event_area">
                 <div class="dayevent" id="21">
-                    <img class="" src="img/1.jpg">
+                <!-- data-toggle="tooltip"代表提示窗為指定的 -->
+                <!-- data-toggle="modal"代表click後會有視窗出現 -->
+                    <span data-toggle="tooltip" data-placement="bottom" title="123"><img class="" src="img/1.jpg" data-toggle="modal"  data-target="#img01"></span>
+                    <span data-toggle="tooltip" data-placement="bottom" title="176"><img class="" src="img/2.jpg" data-toggle="modal"  data-target="#img02"></span>
+                    <span data-toggle="tooltip" data-placement="bottom" title="175"><img class="" src="img/3.jpg" data-toggle="modal"  data-target="#img03"></span>
                 </div>
                 <div class="dayevent" id="22">
-                    <img src="img/2.jpg" >
+                     <span data-toggle="tooltip" data-placement="bottom" title="176"><img class="" src="img/2.jpg" data-toggle="modal"  data-target="#img02"></span>
                 </div>
             </div>
             <div class="side_tag" id="1">
-                    星期一
+                星期一
             </div>
             <div class="side_tag" id="2">
                 星期二
@@ -211,20 +239,70 @@
                 星期日
             </div>
         </div>
+        <!-- click側邊欄圖片後的視窗 -->
+        <div class="modal fade" id="img01" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                <img class="abstract_box" src="img/1.jpg">
+                <p>簡介<br>1<br>1</p>   
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="img02" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                <img class="abstract_box" src="img/2.jpg">
+                <p>簡介</p>   
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div> 
+        <div class="modal fade" id="img03" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                <img class="abstract_box" src="img/3.jpg">
+                <p>簡介</p>   
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>  
         <div id="wrapper">
+        <!-- 地圖 -->
             <div id="map">
                 <img id="schmap" src="img/camp.jpg">
-            <!-- Button trigger modal -->
-            
                 <div id="cse" class="btnbox" data-toggle="tooltip" data-placement="bottom" title="123">
                     <a class="round" data-toggle="modal"  data-target="#myModal"  data-placement="bottom">●</a>
                 </div>
-                <!-- Modal -->
+                <!-- click後的視窗 -->
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                       </div>
                       <div class="modal-body">
@@ -245,7 +323,6 @@
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                       </div>
                       <div class="modal-body">
