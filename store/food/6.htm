@@ -1,0 +1,169 @@
+<!-- 大醫院(1) -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>興大學生會</title>
+
+        <!-- for Google -->
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <meta name="author" content="" />
+        <meta name="copyright" content="" />
+        <meta name="application-name" content="" />
+
+        <!-- for Facebook -->
+        <meta property="og:title" content="" />
+        <meta property="og:type" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:description" content="" />
+
+        <!-- for Twitter -->
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:image" content="" />
+
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.css">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+        <link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+        <link rel="stylesheet" href="../../site.css">
+
+        <!-- justfont -->
+        <script type="text/javascript" src="../../js/justfont.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <!--google spreadsheet data base-->
+        <script>
+        var names = new Array();
+        var address = new Array();
+        var phone = new Array();
+        var content = new Array();
+            function test(json) {
+                for (var i = 0; i < json.feed.entry.length; i++) {
+                    var na = json.feed.entry[i].gsx$name.$t;
+                    var ad = json.feed.entry[i].gsx$address.$t;
+                    var ph = json.feed.entry[i].gsx$phone.$t;
+                    var co = json.feed.entry[i].gsx$content.$t;
+                    names[i] = na;
+                    address[i] = ad;
+                    phone[i] = ph;
+                    content[i] = co;
+                }
+            }
+            function TableList(){
+                str = '';
+                for(var i = 0;i < names.length; i++){
+                    str +='<div class="ui store_style segment"><div class="ui store_title">'
+                    str += names[i] + '</div><table class="ui table"><tbody><tr><td class="negative two wide column">電話</td><td>'
+                    str += phone[i] + '</td></tr><tr><td class="warning">地址</td><td>'
+                    str += address[i] + '</td></tr><tr><td class="positive">優惠內容</td><td>'
+                    str += content[i] + '</td></tr></tbody></table></div><br/>'
+                }
+                $("#tablelist").html(str);
+            }
+        </script>
+
+        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0AhNuImmzoWQudFRpbTBnN3ZhbjJqbk5saW5Pdm5EWFE/odb/public/values?alt=json-in-script&callback=test'>
+        </script>
+    </head>
+    <body>
+        <div id="bg" class="background frame">
+            <div class="real long stripe">
+                <div class="ui active inverted dimmer">
+                    <div class="ui text loader">Loading</div>
+                </div>
+            </div>
+        </div>
+        <div class="frame curtain">
+            <div id="top-menu" class="ui labeled icon secondary pointing ten item large labeled icon menu" style="display:none;">
+            </div>
+            <div class="ui page grid">
+                <h1 id="showoff-text" class="ui center header"></h1>
+            </div>
+            <div id="des" class="masthead des viewport-height stripe">
+                <div class="ui  stackable page grid">
+                    <div class="ui large orange inverted menu">
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/1.htm">
+                            <!-- <i class="home icon"></i> Home -->鍋物
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/2.htm">
+                            <!-- <i class="mail icon"></i> Messages -->飲料
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/3.htm">
+                            <!-- <i class="user icon"></i> Friends -->燒烤&炸物
+
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/4.htm">
+                            <!-- <i class="user icon"></i> Friends -->排餐
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/5.htm">
+                            <!-- <i class="user icon"></i> Friends -->簡餐
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/6.htm">
+                            <!-- <i class="user icon"></i> Friends -->速食
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/7.htm">
+                            <!-- <i class="user icon"></i> Friends -->下午茶
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/8.htm">
+                            <!-- <i class="user icon"></i> Friends -->烘焙
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/9.htm">
+                            <!-- <i class="user icon"></i> Friends -->義式&披薩
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/10.htm">
+                            <!-- <i class="user icon"></i> Friends -->點心
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/11.htm">
+                            <!-- <i class="user icon"></i> Friends -->日韓泰式
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/12.htm">
+                            <!-- <i class="user icon"></i> Friends -->小吃
+                        </a>
+                        <a class="item" href="http://new.nchusg.orgSGHome/store/food/13.htm">
+                            <!-- <i class="user icon"></i> Friends -->早餐
+                        </a>
+                    </div>
+                </div> 
+                <br/>
+                <br/>
+                <div id="tablelist"></div>
+                <script type='text/javascript'>TableList()</script>
+            </div>
+            <div id="footer" class="masthead footer stripe">
+                <div class="ui page one column grid">
+                    <div class="centerAligned column">
+                        <a target="_blank" href="http://nchusg.org/" class="ui us image blue label">
+                            <img src="http://i.imgur.com/zF2JgJ7s.jpg">
+                            國立中興大學學生會
+                        </a>
+                        <a href="mailto:nchusg20@gmail.com" class="ui us image blue label">
+                            <i class="mail icon"></i>
+                            nchusg20@gmail.com
+                            <!-- <div class="detail">使用 Email 聯絡我們</div> -->
+                        </a>
+                        <a href="tel:0422873181" class="ui us image blue label">
+                            <i class="call icon"></i>
+                            04-22873181 (245)
+                            <!-- <div class="detail">使用電話聯絡我們</div> -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.11/jquery.scrollTo.min.js"></script>
+        <script type="text/javascript" src="../../js/jt2html.min.js"></script>
+        <script type="text/javascript" src='../../js/site.js'></script>
+        <!-- google analytics -->
+        <script>
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>興大學生會</title>
+
+		<!-- for Google -->
+        <!-- 關於網站的內容描述 -->
+		<meta name="description" content="" />
+        <!-- 讓搜索引擎容易找到您 -->
+		<meta name="keywords" content="" />
+        <!-- 這個網頁的作者是誰 -->
+		<meta name="author" content="" />
+        <!-- 版權宣告 -->
+		<meta name="copyright" content="" />
+		<meta name="application-name" content="" />
+
+		<!-- for Facebook -->
+		<meta property="og:title" content="" />
+		<meta property="og:type" content="" />
+		<meta property="og:image" content="" />
+		<meta property="og:url" content="" />
+		<meta property="og:description" content="" />
+
+		<!-- for Twitter -->
+		<meta name="twitter:title" content="" />
+		<meta name="twitter:description" content="" />
+		<meta name="twitter:image" content="" />
+
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+		<link rel="stylesheet" href="site.css">
+        
+
+		<!-- justfont -->
+		<script type="text/javascript" src="js/justfont.js"></script>
+		<!-- timeline CSS -->
+        <link rel="stylesheet" type="text/css" href="http://cdn.knightlab.com/libs/timeline/latest/css/timeline.css">
+        <script type="text/javascript" src="http://cdn.knightlab.com/libs/timeline/latest/js/timeline-min.js"></script>
+        <!-- jQuery -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <!-- BEGIN TimelineJS -->
+        <script type="text/javascript" src="http://cdn.knightlab.com/libs/timeline/latest/js/storyjs-embed.js"></script>
+        <script>
+          $(document).ready(function() {
+            // 初始化新的时间轴
+            createStoryJS({
+              type:       'timeline',
+              width:      '100%',
+              height:     '650',
+              source:     'https://docs.google.com/spreadsheet/pub?key=0AihNoyAtfiqAdEFzX3pNckpybDVuVW96NHRBTkM4bUE&output=html',
+              embed_id:   'sg-poster'
+            });
+          });
+        </script>
+        <!-- END TimelineJS -->
+		<!-- JSSOR JS -->
+        <script type="text/javascript" src="js/jssor.js"></script>
+    	<script type="text/javascript" src="js/jssor.slider.js"></script>
+		<!-- BEGIN JSSOR JS -->
+    	<script>
+        //Slider的參數
+    	    jQuery(document).ready(function ($) {                      //表示我將 $ 定義成 jQuery 物件，好讓這個 function 中可以直接使用 $ 不造成混淆
+    	        var options = {
+    	            $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+    	            $ArrowNavigatorOptions: {                            //[Optional] Options which specifies how to animate caption
+    	                $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+    	                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+    	            },
+    	            $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+    	                $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+    	                $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+    	                $ActionMode: 1,                                 //[Optional] 0 None, 1 act by click, 2 act by mouse hover, 3 both, default value is 1
+    	                $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+    	                $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+    	                $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+    	            }
+    	        };
+    	        var jssor_slider2 = new $JssorSlider$("slider2_container", options);
+    	        //responsive code begin
+    	        function ScaleSlider() {
+    	            //reserve blank width for margin+padding: margin+padding-left (10) + margin+padding-right (10)
+    	            var paddingWidth = 30;
+    	            //minimum width should reserve for text
+    	            var minReserveWidth = 200;
+    	            var parentElement = jssor_slider2.$Elmt.parentNode;
+    	            //evaluate parent container width
+    	            var parentWidth = parentElement.clientWidth;
+    	            if (parentWidth) {
+    	                //exclude blank width
+    	                var availableWidth = parentWidth - paddingWidth;
+    	                //calculate slider width as 70% of available width
+    	                var sliderWidth = availableWidth * 0.9;
+    	                //slider width is maximum 600
+    	                sliderWidth = Math.min(sliderWidth, 910);
+    	                //slider width is minimum 200
+    	                sliderWidth = Math.max(sliderWidth, 200);
+    	                var clearFix = "none";
+    	                //evaluate free width for text, if the width is less than minReserveWidth then fill parent container
+    	                if (availableWidth - sliderWidth < minReserveWidth) {
+    	                    //set slider width to available width
+    	                    sliderWidth = availableWidth;
+    	                    //slider width is minimum 200
+    	                    sliderWidth = Math.max(sliderWidth, 200);
+    	                    clearFix = "both";
+    	                }
+    	                //clear fix for safari 3.1, chrome 3
+    	                $('#clearFixDiv').css('clear', clearFix);
+    	                jssor_slider2.$ScaleWidth(sliderWidth);
+    	            }
+    	            else
+    	                window.setTimeout(ScaleSlider, 30);
+    	        }
+    	        ScaleSlider();
+    	        if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+    	            $(window).bind('resize', ScaleSlider);
+    	        }
+    	        //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+    	        //    $(window).bind("orientationchange", ScaleSlider);
+    	        //}
+    	        //responsive code end
+    	    });
+    	</script>
+		<!-- Bullet Navigator Skin Begin -->
+		<style>
+		    .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av
+		    {
+		        background: url(img/b20.png) no-repeat;
+		        overflow:hidden;
+		        cursor: pointer;
+		    }
+		    .jssorb03 div { background-position: -5px -4px; }
+		    .jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
+		    .jssorb03 .av { background-position: -65px -4px; }
+		    .jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
+		</style>
+		<!-- Arrow Navigator Skin Begin -->
+		<style>
+		    .jssora03l, .jssora03r, .jssora03ldn, .jssora03rdn
+		    {
+		        position: absolute;
+		        cursor: pointer;
+		        display: block;
+		        background: url(img/a10.png) no-repeat;
+		        overflow:hidden;
+		    }
+		    .jssora03l { background-position: -3px -33px; }
+		    .jssora03r { background-position: -63px -33px; }
+		    .jssora03ldn { background-position: -243px -33px; }
+		    .jssora03rdn { background-position: -303px -33px; }
+		</style>
+    	<!-- END JSSOR JS -->
+    	<!--google spreadsheet data base for JSSOR images-->
+    	<script>
+    	    var names = new Array();
+    	    var image = new Array();
+    	    var link = new Array();
+    	    function test(json) {
+    	        for (var i = 0; i < json.feed.entry.length; i++) {
+    	            var na = json.feed.entry[i].gsx$name.$t;
+    	            var is = json.feed.entry[i].gsx$imagesource.$t;
+    	            var lk = json.feed.entry[i].gsx$link.$t;
+    	            names[i] = na;
+    	            image[i] = is;
+    	            link[i] = lk;
+    	        }
+    	    }
+    	    function TableList(){
+    	        str = '';
+    	        for(var i = 0;i < names.length; i++){
+    	            str +='<div><a href="'+link[i]+'"><img u="image" src="' + image[i] + '"></a></div>';
+    	        }
+    	        $("#tablelist").html(str);
+    	    }
+    	</script>
+    	<script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0AhNuImmzoWQudFh5c05YMVcxVkUtM2pQdnVhRkh5VEE/od6/public/values?alt=json-in-script&callback=test'>
+    	</script>
+
+        <script type="text/javascript">
+            $(document)
+                .ready(function() {
+                    $('#g1')
+                        .modal('attach events', '#g11','show dimmer,show');
+                    $('#g2')
+                        .modal('attach events', '#g22','show dimmer,show');
+                    $('#g3')
+                        .modal('attach events', '#g33','show dimmer,show');
+                    $('#g4')
+                        .modal('attach events', '#g44','show dimmer,show');
+                    $('#g5')
+                        .modal('attach events', '#g55','show dimmer,show');
+                    $('#g6')
+                        .modal('attach events', '#g66','show dimmer,show');
+                    $('#d1')
+                        .modal('attach events', '#d11','show dimmer,show');
+                    $('#d2')
+                        .modal('attach events', '#d22','show dimmer,show');
+                    $('#d3')
+                        .modal('attach events', '#d33','show dimmer,show');
+                    $('#d4')
+                        .modal('attach events', '#d44','show dimmer,show');
+                    $('#d5')
+                        .modal('attach events', '#d55','show dimmer,show');
+                    $('#d6')
+                        .modal('attach events', '#d66','show dimmer,show');
+                });
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $("#change_g").click(function() {
+                    $('.ui.shape')
+                        .eq(0)
+                            .shape('flip up')
+                            .end()
+                        .eq(1)
+                            .shape('flip down')
+                            .end()
+                        .eq(2)
+                            .shape('flip up')
+                });
+                $("#change_d").click(function() {
+                    $('.ui.shape.op')
+                        .eq(0)
+                            .shape('flip left')
+                            .end()
+                        .eq(1)
+                            .shape('flip up')
+                            .end()
+                        .eq(2)
+                            .shape('flip right')
+                });
+            });
+        </script>
+        
+        <!--google spreadsheet group data base-->
+        <script>
+            var namess = new Array();
+            var times = new Array();
+            var imgss = new Array();
+            var heads = new Array();
+            var contents = new Array();
+            var numbers = new Array();
+            var number2s = new Array();
+            var fees = new Array();
+
+            function test1(json) {
+                for (var i = 0; i < json.feed.entry.length; i++) {
+                    var naa = json.feed.entry[i].gsx$name.$t;
+                    var igg = json.feed.entry[i].gsx$image.$t;
+                    var he = json.feed.entry[i].gsx$head.$t;
+                    var co = json.feed.entry[i].gsx$content.$t;
+                    var ti = json.feed.entry[i].gsx$time.$t;
+                    var fe = json.feed.entry[i].gsx$fee.$t;
+                    var nu = json.feed.entry[i].gsx$number.$t;
+                    var nu2 = json.feed.entry[i].gsx$number2.$t;
+                    namess[i] = naa;
+                    imgss[i] = igg;
+                    heads[i] = he;
+                    contents[i] = co;
+                    times[i] = ti;
+                    fees[i] = fe;
+                    numbers[i] = nu;
+                    number2s[i] = nu2;
+                }
+            }
+            function GroupList1(){
+                tes = '';
+                    tes +='<div id="' + number2s[0] + '" class="side active">';
+                    tes +='<div class="ui card">';
+                    tes +='<div class="image">';
+                    tes +='<img class="ui medium rounded image" src="' + imgss[0] + '"style="width:304px;height:228px"></div>';
+                    tes +='<div class="content" style="background-color:#585858;">';
+                    tes +='<div class="header">' + namess[0] + '</div></div></div></div>';
+                    tes +='<div id="' + number2s[1] + '" class="side">';
+                    tes +='<div class="ui card">';
+                    tes +='<div class="image">';
+                    tes +='<img class="ui medium rounded image" src="' + imgss[1] + '"style="width:304px;height:228px"></div>';
+                    tes +='<div class="content" style="background-color:#585858;">';
+                    tes +='<div class="header">' + namess[1] + '</div></div></div></div>';
+                $("#grouplist1").html(tes);
+            }
+            function GroupList2(){
+                tes2 = '';
+                    tes2 +='<div id="' + number2s[2] + '" class="side active">';
+                    tes2 +='<div class="ui card">';
+                    tes2 +='<div class="image">';
+                    tes2 +='<img class="ui medium rounded image" src="' + imgss[2] + '"style="width:304px;height:228px"></div>';
+                    tes2 +='<div class="content" style="background-color:#585858;">';
+                    tes2 +='<div class="header">' + namess[2] + '</div></div></div></div>';
+                    tes2 +='<div id="' + number2s[3] + '" class="side">';
+                    tes2 +='<div class="ui card">';
+                    tes2 +='<div class="image">';
+                    tes2 +='<img class="ui medium rounded image" src="' + imgss[3] + '"style="width:304px;height:228px"></div>';
+                    tes2 +='<div class="content" style="background-color:#585858;">';
+                    tes2 +='<div class="header">' + namess[3] + '</div></div></div></div>';
+                $("#grouplist2").html(tes2);
+            }
+            function GroupList3(){
+                tes3 = '';
+                    tes3 +='<div id="' + number2s[4] + '" class="side active">';
+                    tes3 +='<div class="ui card">';
+                    tes3 +='<div class="image">';
+                    tes3 +='<img class="ui medium rounded image" src="' + imgss[4] + '"style="width:304px;height:228px"></div>';
+                    tes3 +='<div class="content" style="background-color:#585858;">';
+                    tes3 +='<div class="header">' + namess[4] + '</div></div></div></div>';
+                    tes3 +='<div id="' + number2s[5] + '" class="side">';
+                    tes3 +='<div class="ui card">';
+                    tes3 +='<div class="image">';
+                    tes3 +='<img class="ui medium rounded image" src="' + imgss[5] + '" style="width:304px;height:228px"></div>';
+                    tes3 +='<div class="content" style="background-color:#585858;">';
+                    tes3 +='<div class="header">' + namess[5] + '</div></div></div></div>';
+                $("#grouplist3").html(tes3);
+            }
+            function moa0(){
+                mo = '';
+                mo +='<div id="' + numbers[0] + '" class="ui modal">'
+                mo +='<i class="close icon"></i>'
+                mo +='<div class="header">' + namess[0] + '</div>'
+                mo +='<div class="content"><div class="ui large image"><img src="' + imgss[0] + '"></div>'
+                mo +='<div class="description"><div class="ui header">' + heads[0] + '</div>'
+                mo +='<div>' + contents[0] + '</div>'
+                mo +='<p>活動時間: ' + times[0] + '</p>'
+                mo +='<p>$: ' + fees[0] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                mo +='<div id="' + numbers[1] + '" class="ui modal">'
+                mo +='<i class="close icon"></i>'
+                mo +='<div class="header">' + namess[1] + '</div>'
+                mo +='<div class="content"><div class="ui large image"><img src="' + imgss[1] + '"></div>'
+                mo +='<div class="description"><div class="ui header">' + heads[1] + '</div>'
+                mo +='<p>' + contents[1] + '</p>'
+                mo +='<p>活動時間: ' + times[1] + '</p>'
+                mo +='<p>$: ' + fees[1] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                mo +='<div id="' + numbers[2] + '" class="ui modal">'
+                mo +='<i class="close icon"></i>'
+                mo +='<div class="header">' + namess[2] + '</div>'
+                mo +='<div class="content"><div class="ui large image"><img src="' + imgss[2] + '"></div>'
+                mo +='<div class="description"><div class="ui header">' + heads[2] + '</div>'
+                mo +='<p>' + contents[2] + '</p>'
+                mo +='<p>活動時間: ' + times[2] + '</p>'
+                mo +='<p>$: ' + fees[2] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                mo +='<div id="' + numbers[3] + '" class="ui modal">'
+                mo +='<i class="close icon"></i>'
+                mo +='<div class="header">' + namess[3] + '</div>'
+                mo +='<div class="content"><div class="ui large image"><img src="' + imgss[3] + '"></div>'
+                mo +='<div class="description"><div class="ui header">' + heads[3] + '</div>'
+                mo +='<p>' + contents[3] + '</p>'
+                mo +='<p>活動時間: ' + times[3] + '</p>'
+                mo +='<p>$: ' + fees[3] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                mo +='<div id="' + numbers[4] + '" class="ui modal">'
+                mo +='<i class="close icon"></i>'
+                mo +='<div class="header">' + namess[4] + '</div>'
+                mo +='<div class="content"><div class="ui large image"><img src="' + imgss[4] + '"></div>'
+                mo +='<div class="description"><div class="ui header">' + heads[4] + '</div>'
+                mo +='<p>' + contents[4] + '</p>'
+                mo +='<p>活動時間: ' + times[4] + '</p>'
+                mo +='<p>$: ' + fees[4] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                mo +='<div id="' + numbers[5] + '" class="ui modal">'
+                mo +='<i class="close icon"></i>'
+                mo +='<div class="header">' + namess[5] + '</div>'
+                mo +='<div class="content"><div class="ui large image"><img src="' + imgss[5] + '"></div>'
+                mo +='<div class="description"><div class="ui header">' + heads[5] + '</div>'
+                mo +='<p>' + contents[5] + '</p>'
+                mo +='<p>活動時間: ' + times[5] + '</p>'
+                mo +='<p>$: ' + fees[5] + '</p></div></div></div>'
+                $("#moallist").html(mo);
+            }
+        </script>
+        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0AhNuImmzoWQudDhlYkdFRUc2SDBCM21RT056NV9vamc/od6/public/values?alt=json-in-script&callback=test1'>
+        </script>
+
+        <!--google spreadsheet department data base-->
+        <script>
+            var d_namess = new Array();
+            var d_times = new Array();
+            var d_imgss = new Array();
+            var d_heads = new Array();
+            var d_contents = new Array();
+            var d_numbers = new Array();
+            var d_number2s = new Array();
+            var d_fees = new Array();
+
+            function test2(json) {
+                for (var i = 0; i < json.feed.entry.length; i++) {
+                    var d_naa = json.feed.entry[i].gsx$name.$t;
+                    var d_igg = json.feed.entry[i].gsx$image.$t;
+                    var d_he = json.feed.entry[i].gsx$head.$t;
+                    var d_co = json.feed.entry[i].gsx$content.$t;
+                    var d_ti = json.feed.entry[i].gsx$time.$t;
+                    var d_fe = json.feed.entry[i].gsx$fee.$t;
+                    var d_nu = json.feed.entry[i].gsx$number.$t;
+                    var d_nu2 = json.feed.entry[i].gsx$number2.$t;
+                    d_namess[i] = d_naa;
+                    d_imgss[i] = d_igg;
+                    d_heads[i] = d_he;
+                    d_contents[i] = d_co;
+                    d_times[i] = d_ti;
+                    d_fees[i] = d_fe;
+                    d_numbers[i] = d_nu;
+                    d_number2s[i] = d_nu2;
+                }
+            }
+            function Department1(){
+                d_tes = '';
+                    d_tes +='<div id="' + d_number2s[0] + '" class="side active">';
+                    d_tes +='<div class="ui card">';
+                    d_tes +='<div class="image">';
+                    d_tes +='<img class="ui medium rounded image" src="' + d_imgss[0] + '" style="width:304px;height:228px"></div>';
+                    d_tes +='<div class="content" style="background-color:#585858;">';
+                    d_tes +='<div class="header">' + d_namess[0] + '</div></div></div></div>';
+                    d_tes +='<div id="' + d_number2s[1] + '" class="side">';
+                    d_tes +='<div class="ui card">';
+                    d_tes +='<div class="image">';
+                    d_tes +='<img class="ui medium rounded image" src="' + d_imgss[1] + '"style="width:304px;height:228px"></div>';
+                    d_tes +='<div class="content" style="background-color:#585858;">';
+                    d_tes +='<div class="header">' + d_namess[1] + '</div></div></div></div>';
+                $("#department1").html(d_tes);
+            }
+            function Department2(){
+                d_tes2 = '';
+                    d_tes2 +='<div id="' + d_number2s[2] + '" class="side active">';
+                    d_tes2 +='<div class="ui card">';
+                    d_tes2 +='<div class="image">';
+                    d_tes2 +='<img class="ui medium rounded image" src="' + d_imgss[2] + '"style="width:304px;height:228px"></div>';
+                    d_tes2 +='<div class="content" style="background-color:#585858;">';
+                    d_tes2 +='<div class="header">' + d_namess[2] + '</div></div></div></div>';
+                    d_tes2 +='<div id="' + d_number2s[3] + '" class="side">';
+                    d_tes2 +='<div class="ui card">';
+                    d_tes2 +='<div class="image">';
+                    d_tes2 +='<img class="ui medium rounded image" src="' + d_imgss[3] + '"style="width:304px;height:228px"></div>';
+                    d_tes2 +='<div class="content" style="background-color:#585858;">';
+                    d_tes2 +='<div class="header">' + d_namess[3] + '</div></div></div></div>';
+                $("#department2").html(d_tes2);
+            }
+            function Department3(){
+                d_tes3 = '';
+                    d_tes3 +='<div id="' + d_number2s[4] + '" class="side active">';
+                    d_tes3 +='<div class="ui card">';
+                    d_tes3 +='<div class="image">';
+                    d_tes3 +='<img class="ui medium rounded image" src="' + d_imgss[4] + '"style="width:304px;height:228px"></div>';
+                    d_tes3 +='<div class="content" style="background-color:#585858;">';
+                    d_tes3 +='<div class="header">' + d_namess[4] + '</div></div></div></div>';
+                    d_tes3 +='<div id="' + d_number2s[5] + '" class="side">';
+                    d_tes3 +='<div class="ui card">';
+                    d_tes3 +='<div class="image">';
+                    d_tes3 +='<img class="ui medium rounded image" src="' + d_imgss[5] + '"style="width:304px;height:228px"></div>';
+                    d_tes3 +='<div class="content" style="background-color:#585858;">';
+                    d_tes3 +='<div class="header">' + d_namess[5] + '</div></div></div></div>';
+                $("#department3").html(d_tes3);
+            }
+            function moa1(){
+                d_mo = '';
+                d_mo +='<div id="' + d_numbers[0] + '" class="ui modal">'
+                d_mo +='<i class="close icon"></i>'
+                d_mo +='<div class="header">' + d_namess[0] + '</div>'
+                d_mo +='<div class="content"><div class="ui large image"><img src="' + d_imgss[0] + '"></div>'
+                d_mo +='<div class="description"><div class="ui header">' + d_heads[0] + '</div>'
+                d_mo +='<p>' + d_contents[0] + '</p>'
+                d_mo +='<p>活動時間: ' + d_times[0] + '</p>'
+                d_mo +='<p>$: ' + d_fees[0] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                d_mo +='<div id="' + d_numbers[1] + '" class="ui modal">'
+                d_mo +='<i class="close icon"></i>'
+                d_mo +='<div class="header">' + d_namess[1] + '</div>'
+                d_mo +='<div class="content"><div class="ui large image"><img src="' + d_imgss[1] + '"></div>'
+                d_mo +='<div class="description"><div class="ui header">' + d_heads[1] + '</div>'
+                d_mo +='<p>' + d_contents[1] + '</p>'
+                d_mo +='<p>活動時間: ' + d_times[1] + '</p>'
+                d_mo +='<p>$: ' + d_fees[1] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                d_mo +='<div id="' + d_numbers[2] + '" class="ui modal">'
+                d_mo +='<i class="close icon"></i>'
+                d_mo +='<div class="header">' + d_namess[2] + '</div>'
+                d_mo +='<div class="content"><div class="ui large image"><img src="' + d_imgss[2] + '"></div>'
+                d_mo +='<div class="description"><div class="ui header">' + d_heads[2] + '</div>'
+                d_mo +='<p>' + d_contents[2] + '</p>'
+                d_mo +='<p>活動時間: ' + d_times[2] + '</p>'
+                d_mo +='<p>$: ' + d_fees[2] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                d_mo +='<div id="' + d_numbers[3] + '" class="ui modal">'
+                d_mo +='<i class="close icon"></i>'
+                d_mo +='<div class="header">' + d_namess[3] + '</div>'
+                d_mo +='<div class="content"><div class="ui large image"><img src="' + d_imgss[3] + '"></div>'
+                d_mo +='<div class="description"><div class="ui header">' + d_heads[3] + '</div>'
+                d_mo +='<p>' + d_contents[3] + '</p>'
+                d_mo +='<p>活動時間: ' + d_times[3] + '</p>'
+                d_mo +='<p>$: ' + d_fees[3] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                d_mo +='<div id="' + d_numbers[4] + '" class="ui modal">'
+                d_mo +='<i class="close icon"></i>'
+                d_mo +='<div class="header">' + d_namess[4] + '</div>'
+                d_mo +='<div class="content"><div class="ui large image"><img src="' + d_imgss[4] + '"></div>'
+                d_mo +='<div class="description"><div class="ui header">' + d_heads[4] + '</div>'
+                d_mo +='<p>' + d_contents[4] + '</p>'
+                d_mo +='<p>活動時間: ' + d_times[4] + '</p>'
+                d_mo +='<p>$: ' + d_fees[4] + '</p></div></div></div>'
+                // $("#moallist").html(mo);
+                d_mo +='<div id="' + d_numbers[5] + '" class="ui modal">'
+                d_mo +='<i class="close icon"></i>'
+                d_mo +='<div class="header">' + d_namess[5] + '</div>'
+                d_mo +='<div class="content"><div class="ui large image"><img src="' + d_imgss[5] + '"></div>'
+                d_mo +='<div class="description"><div class="ui header">' + d_heads[5] + '</div>'
+                d_mo +='<p>' + d_contents[5] + '</p>'
+                d_mo +='<p>活動時間: ' + d_times[5] + '</p>'
+                d_mo +='<p>$: ' + d_fees[5] + '</p></div></div></div>'
+                $("#d_moallist").html(d_mo);
+            }
+        </script>
+        <script type='text/javascript' src='https://spreadsheets.google.com/feeds/list/0AhNuImmzoWQudDhlYkdFRUc2SDBCM21RT056NV9vamc/od7/public/values?alt=json-in-script&callback=test2'>
+        </script>
+
+        <style>
+            body{
+                font-family: "微軟正黑體";
+                width: 100%;
+            }
+            .abstract_tooltip{
+                width: 100%;
+                top: 0;
+                height: 50%;
+                right: 0%;
+            }
+            #side{
+                position: absolute;
+                left: 0;
+                top: 100px;
+                width:auto;
+                float: left;
+                z-index: 120;
+            }
+            #modec{
+                cursor: pointer;
+                color: white;
+                font-size: 22px;
+                padding: 5px 0px 5px 10px;
+                width: 100%;
+                height: 20%;
+                background-color: black;
+                border-top: 2px solid #CECEF6;
+                border-bottom:2px solid #CECEF6;
+                left: -10px;
+            }
+            #modec:hover{
+                cursor: pointer;
+                color: black;
+                font-size: 22px;
+                padding: 5px 0px 5px 10px;
+                width: 100%;
+                height: 20%;
+                background-color: white;
+                border-top: 2px solid #CECEF6;
+                border-bottom:2px solid #CECEF6;
+                left: -10px;
+            }
+            .side_tag{
+                cursor: pointer;
+                color: white;
+                font-size: 22px;
+                padding: 5px 0px 5px 10px;
+                width: 100%;
+                height: 20%;
+                background-color: black;
+                border-top: 2px solid #CECEF6;
+                border-bottom:2px solid #CECEF6;
+                left: -10px;
+            }
+            #event_area {
+                width: 300px;
+                background-color: white;
+                padding: 20px 20px 0 20px;
+                position: absolute;
+                top:0;
+                height: 100%;
+                left: -270px;
+                z-index: -1;
+            }
+            .dayevent{
+                position: absolute;
+                width: 80%;
+                top: 0;
+                height: 100%;
+                right: 0%;
+                display: none;
+                overflow:scroll;
+            }
+            .dayevent img{
+                width: 100%;
+                top: 0;
+                height: 50%;
+                right: 0%;
+                cursor: pointer;
+            }
+            .btnbox{
+                width: 5px;
+                height: auto;
+                float:left;
+                cursor: pointer;
+            }
+            #ccs{
+                position: absolute;
+                top: 35%;
+                left: 28%;
+            }
+            #cse{
+                position: absolute;
+                top: 52%;
+                left: 32%;
+            }
+            #crr{
+                position: absolute;
+                top: 67%;
+                left: 30%;
+            }
+            #cwt{
+                position: absolute;
+                top: 84%;
+                left: 31%;
+            }
+            #csr{
+                position: absolute;
+                top: 27%;
+                left: 50%;
+            }
+            #fgt{
+                position: absolute;
+                top:50%;
+                left: 44%;
+            }
+            #adr{
+                position: absolute;
+                top: 75%;
+                left: 43%;
+            }
+            #cdd{
+                position: absolute;
+                top: 20%;
+                left: 65%;
+            }
+            #map{
+                position: absolute;
+                width: auto;
+                height: auto;
+                left: 10%;
+                top: 100%;
+                background-color: orange;
+            }
+            #schmap{
+                width: 100%;
+                height: 100%;
+                float:left;
+            }
+            .round{
+              width:5%;
+              height:5%;
+              display:inline-block;
+              font-size:20px; /* 修改圆点的大小 */
+              text-align:center;
+              text-decoration:none;
+              color:black; /* 修改圆点的颜色 */
+            }
+            .round:hover{
+              margin-left:-5px;
+              margin-top:-8px;
+              width:5%;
+              height:5%;
+              display:inline-block;
+              font-size:30px; /* 修改圆点的大小 */
+              text-align:center;
+              text-decoration:none;
+              color:#F00; /* 修改圆点的颜色 */
+            }
+            .abstract_box{
+                width: 100%;
+                height:100%;
+            }
+            .point{
+                cursor: pointer;
+            }
+            @media screen and (max-width: 710px) {
+                .round {
+                 font-size: 10px;
+
+                }
+                .round:hover {
+                 font-size: 20px;
+                }
+                .btnbox{
+                    margin-left:-5px;
+                    margin-top:-8px;
+                }
+
+            }
+            @media screen and (max-width: 768px) {
+                .div1 {
+                 font-size: 20px;
+                }
+            }
+            @media screen and (min-width: 768px) and (max-width: 992px) {
+                .div1 {
+                 font-size: 30px;
+                }
+            }
+
+            @media screen and (min-width: 1200px) {
+                .div1 {
+                 font-size: 40px;
+                }
+            }
+            .ui.sidebar {
+               width: 1000px!important;
+               margin-left: -275px!important;
+               position: absolute;
+               top:0;
+            }
+            #X{
+                position: absolute;
+                right:0;
+                background-color:#F2F2F2;
+                cursor: pointer;
+                z-index: 100
+            }
+        </style>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                // 控制側邊欄
+                var mode="",target,target1,k=0;
+                $('.side_tag').click(
+                    function()
+                    {
+                        target=$(this).attr('id');
+                        target1="2"+$(this).attr('id');
+                        mode=sideIO(mode,target,target1)
+                    }
+                );
+                $('.side_tag').hover(
+                    function()
+                    {
+                        $(this).css('background-color','white');
+                        $(this).css('color','black');
+                    },
+                    function()
+                    {
+                        $('.side_tag').css('background-color','black');
+                        $('.side_tag').css('color','white');
+                        if(mode!="")
+                        {
+                           $('div[id="'+target+'"]').css('background-color','white');
+                           $('div[id="'+target+'"]').css('color','black');  
+                        }
+                        
+                    }
+                );
+                $('#wrapper').click(
+                    function()
+                    {
+                       mode=sideIn();
+                    }
+                );
+                var t=0;
+                $('#modec').click(
+                    function()
+                    {
+                        if(t==0)
+                        {
+                            $('#wrapper').fadeIn(500);
+                            $('#container-fluid').hide();
+                            t=1;
+                        }
+                        else
+                        {
+                            $('#container-fluid').fadeIn(500);
+                            $('#wrapper').hide();
+                            t=0;
+                        }
+                    }
+                );
+            });
+            // 控制側邊欄的顯現與關閉
+            var sideIO=function(mode,target,target1){
+                // 第一次按側邊欄
+                if(mode=="")
+                {
+                    $(this).css('background-color','white');
+                    $(this).css('color','black');
+                    $('#event_area').stop().animate(
+                    {
+                        left: '0',
+                        backgroundColor: 'rgb(255,255,255)'
+                    },
+                    500
+                    ); // end animate
+                    $('.dayevent').hide();
+                    mode=target1;
+                    $('div[id$="'+target1+'"]').fadeIn(500);
+                    return mode;
+                }
+                // 如果連續按同一個按鈕
+                else if(mode==target1)
+                {
+                    $('#event_area').stop().animate(
+                    {
+                        left: '-270px',
+                        backgroundColor: 'rgb(110,138,195)'
+                    },
+                    500
+                    ); // end animate
+                    $('.dayevent').fadeOut(500);
+                    mode="";
+                    return mode;
+                }
+                // 如果第一次和第二次click的按鈕不同
+                else
+                {
+                    $('.side_tag').css('background-color','black');
+                    $('.side_tag').css('color','white');
+                    $('div[id="'+target+'"]').css('background-color','white');
+                    $('div[id="'+target+'"]').css('color','black');
+                    $('.dayevent').hide();
+                    mode=target1;
+                    $('div[id$="'+target1+'"]').fadeIn(500);
+                    return mode;
+                }  
+            };
+            // 當click側邊欄以外的區域,關閉側邊欄
+            var sideIn=function(){
+                    $('#event_area').stop().animate(
+                    {
+                        left: '-270px',
+                        backgroundColor: 'rgb(110,138,195)'
+                    },
+                    500
+                    ); // end animate
+                    $('.side_tag').css('background-color','black');
+                    $('.side_tag').css('color','white');
+                    $('.dayevent').fadeOut(500);
+                    mode="";
+                    return mode;
+                };
+        </script>
+        <script type="text/javascript">
+            var target,mode=0;
+            $(document).ready(function(){
+                $('.abstract').click(function(){
+                    target="1"+$(this).attr('id');
+                    $('div[id="'+target+'"]').modal('show');
+                });
+                $('.abstract')
+                  .popup({
+                    hoverable: true,
+                    position : 'right center'
+                    
+                  });
+                 $('.point')
+                    .popup({
+                       popup: '.special.popup'
+                      
+                    }); 
+                $('.coupled.modal')
+                  .modal({
+                    allowMultiple: false
+                  })
+                ;
+                $('.ui.sidebar')
+                  .sidebar({closable:false})
+                ;  
+                $('#X').click(function(){
+                    $('.ui.sidebar')
+                      .sidebar('hide','fixed','overlay')
+                    ;    
+
+
+                });
+                 $('#modec').click(function(){
+                    $('.ui.sidebar')
+                      .sidebar('toggle','fixed','overlay')
+                    ;
+                  }); 
+                
+            });    
+        </script>
+	</head>
+	<body>
+        <!-- 側邊欄 -->
+
+            <div id="side">
+                <div id="event_area">
+                    <div class="dayevent" id="21">
+                    <!-- data-toggle="tooltip"代表提示窗為指定的 -->
+                    <!-- data-toggle="modal"代表click後會有視窗出現 -->
+                        <button id="a" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/1.jpg" data-toggle="modal"  data-target="#img01"></button>
+                        <button id="b" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/2.jpg" data-toggle="modal"  data-target="#img02"></button>
+                        <button id="c" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/3.jpg" data-toggle="modal"  data-target="#img03"></button>
+                    </div>
+                    <div class="dayevent" id="22">
+                        <button id="a" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/1.jpg" data-toggle="modal"  data-target="#img01"></button>
+                    </div>
+                    <div class="dayevent" id="23">
+                        <button id="b" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/2.jpg" data-toggle="modal"  data-target="#img01"></button>
+                    </div>
+                    <div class="dayevent" id="24">
+                        <button id="c" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/3.jpg" data-toggle="modal"  data-target="#img01"></button>
+                    </div>
+                    <div class="dayevent" id="25">
+                    </div>
+                    <div class="dayevent" id="26">
+                    </div>
+                    <div class="dayevent" id="27">
+                    </div>
+                </div>
+                <div  id="modec" class="ui button" data-content="Hello. This is an inverted popup" data-variation="inverted">
+                    map
+                </div>
+                <div class="side_tag" id="1">
+                    星期一
+                </div>
+                <div class="side_tag" id="2">
+                    星期二
+                </div>
+                <div class="side_tag" id="3">
+                    星期三
+                </div>
+                <div class="side_tag" id="4">
+                    星期四
+                </div>
+                <div class="side_tag" id="5">
+                    星期五
+                </div>
+                <div class="side_tag" id="6">
+                    星期六
+                </div>
+                <div class="side_tag" id="7">
+                    星期日
+                </div>
+            </div>
+            <!-- click側邊欄圖片後的視窗 -->
+            <div id="1a" class="ui modal">
+              <i class="close icon"></i>
+              <div class="header">
+                學生會活動
+              </div>
+              <div class="image content">
+                <div class="ui medium image">
+                  <img src="img/1.jpg" data-toggle="modal"  data-target="#img01">
+                </div>
+                <div class="description">
+                  <div class="ui header">We've auto-chosen a profile image for you.</div>
+                  <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                  <p>Is it okay to use this photo?</p>
+                </div>
+              </div>
+              <div class="actions">
+                <div class="ui black deny button">
+                  Nope
+                </div>
+                <div class="ui positive right labeled icon button">
+                  Yep, that's me
+                  <i class="checkmark icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <div id="1b" class="ui modal">
+              <i class="close icon"></i>
+              <div class="header">
+                ...
+              </div>
+              <div class="image content">
+                <div class="ui medium image">
+                  <img src="img/2.jpg" data-toggle="modal"  data-target="#img01">
+                </div>
+                <div class="description">
+                  <div class="ui header">We've auto-chosen a profile image for you.</div>
+                  <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                  <p>Is it okay to use this photo?</p>
+                </div>
+              </div>
+              <div class="actions">
+                <div class="ui black deny button">
+                  Nope
+                </div>
+                <div class="ui positive right labeled icon button">
+                  Yep, that's me
+                  <i class="checkmark icon"></i>
+                </div>
+              </div>
+            </div>
+
+            <div id="1c" class="ui modal">
+              <i class="close icon"></i>
+              <div class="header">
+                ...
+              </div>
+              <div class="image content">
+                <div class="ui medium image">
+                  <img src="img/3.jpg" data-toggle="modal"  data-target="#img01">
+                </div>
+                <div class="description">
+                  <div class="ui header">We've auto-chosen a profile image for you.</div>
+                  <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                  <p>Is it okay to use this photo?</p>
+                </div>
+              </div>
+              <div class="actions">
+                <div class="ui black deny button">
+                  Nope
+                </div>
+                <div class="ui positive right labeled icon button">
+                  Yep, that's me
+                  <i class="checkmark icon"></i>
+                </div>
+              </div>
+            </div>
+        <div id="wrapper">
+    		<div id="bg" class="background frame">
+    			<div class="real long stripe">
+    				<div class="ui active inverted dimmer">
+    					<div class="ui text loader">Loading</div>
+    				</div>
+    			</div>
+    		</div>
+    		<div id="filter" class="filter frame"></div>
+    		<div class="frame curtain">
+    			<div id="index" class="real index ">
+    				<div id="top-menu" class="ui labeled icon secondary pointing ten item large labeled icon menu" style="display:none;">
+    				</div>
+    				<div class="ui stackable page grid">
+    					<!-- <div class="sixteen wide column"> -->
+    						<!-- Jssor Slider Begin -->
+    				        <div id="slider2_container" style="position:relative;width: 910px;height: 430px; overflow: hidden;" class="centerized">
+    				            <!-- Slides Container -->
+    				            <div id="tablelist" u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 910px; height: 430px;
+    				                overflow: hidden;">
+    				                <script type='text/javascript'>TableList()</script>
+    				            </div>
+    				            <!-- bullet navigator container -->
+    				            <div u="navigator" class="jssorb03" style="position: absolute; bottom: 4px; left: 6px;">
+    				                <!-- bullet navigator item prototype -->
+    				                <div u="prototype" style="position: absolute; width: 21px; height: 21px; text-align:center; line-height:21px; color:white; font-size:12px;"><NumberTemplate></NumberTemplate></div>
+    				            </div>
+    				            <!-- Bullet Navigator Skin End -->
+
+    				            <!-- Arrow Left -->
+    				            <span u="arrowleft" class="jssora03l" style="width: 55px; height: 55px; top: 113px; left: 8px;">
+    				            </span>
+    				            <!-- Arrow Right -->
+    				            <span u="arrowright" class="jssora03r" style="width: 55px; height: 55px; top: 113px; right: 8px">
+    				            </span>
+    				            <!-- Arrow Navigator Skin End -->
+    				        </div>
+    						<h1 id="showoff-text" class="ui center header"></h1>
+    					<!-- </div> -->
+    					<!-- <div class="six wide column">
+    						<iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fnchusg&amp;width&amp;height=395&amp;colorscheme=light&amp;show_faces=false&amp;header=false&amp;stream=true&amp;show_border=false" scrolling="no" frameborder="0" style="width:100%;border:none; overflow:hidden; height:395px;" allowTransparency="true"></iframe>
+    					</div> -->
+    				</div>
+    			</div>
+            <div class="ui very wide right  fixed sidebar ">
+                <i id="X" class="fa fa-times fa-2x"></i>
+                <img id="schmap" src="img/nchu_location.jpg">
+
+                <div id="ccs" class="ui point round abstract" data-content="ccs" data-variation="inverted">●</div>
+                <div id="1ccs" class="ui modal">
+                  <i class="close icon"></i>
+                  <div class="header">
+                    ...
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                      
+                    </div>
+                    <div class="description">
+                      <div class="ui header">We've auto-chosen a profile image for you.</div>
+                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                      <p>Is it okay to use this photo?</p>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui black deny button">
+                      Nope
+                    </div>
+                    <div class="ui positive right labeled icon button">
+                      Yep, that's me
+                      <i class="checkmark icon"></i>
+                    </div>
+                  </div>
+                </div> 
+
+                <div id="cse" class="ui point round abstract" data-content="cse" data-variation="inverted">●</div>
+                <div id="1cse" class="ui modal">
+                  <i class="close icon"></i>
+                  <div class="header">
+                    ...
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                      
+                    </div>
+                    <div class="description">
+                      <div class="ui header">We've auto-chosen a profile image for you.</div>
+                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                      <p>Is it okay to use this photo?</p>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui black deny button">
+                      Nope
+                    </div>
+                    <div class="ui positive right labeled icon button">
+                      Yep, that's me
+                      <i class="checkmark icon"></i>
+                    </div>
+                  </div>
+                </div> 
+
+                <div id="crr" class="ui point round abstract" data-content="crr" data-variation="inverted">●</div>
+                <div id="1crr" class="ui modal">
+                  <i class="close icon"></i>
+                  <div class="header">
+                    ...
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                      
+                    </div>
+                    <div class="description">
+                      <div class="ui header">We've auto-chosen a profile image for you.</div>
+                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                      <p>Is it okay to use this photo?</p>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui black deny button">
+                      Nope
+                    </div>
+                    <div class="ui positive right labeled icon button">
+                      Yep, that's me
+                      <i class="checkmark icon"></i>
+                    </div>
+                  </div>
+                </div> 
+
+                <div id="cwt" class="ui point round abstract" data-content="cwt" data-variation="inverted">●</div>
+                <div id="1cwt" class="ui modal">
+                  <i class="close icon"></i>
+                  <div class="header">
+                    ...
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                      
+                    </div>
+                    <div class="description">
+                      <div class="ui header">We've auto-chosen a profile image for you.</div>
+                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                      <p>Is it okay to use this photo?</p>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui black deny button">
+                      Nope
+                    </div>
+                    <div class="ui positive right labeled icon button">
+                      Yep, that's me
+                      <i class="checkmark icon"></i>
+                    </div>
+                  </div>
+                </div> 
+
+                <div id="csr" class="ui point round abstract" data-content="csr" data-variation="inverted">●</div>
+                <div id="1csr" class="ui modal">
+                  <i class="close icon"></i>
+                  <div class="header">
+                    ...
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                      
+                    </div>
+                    <div class="description">
+                      <div class="ui header">We've auto-chosen a profile image for you.</div>
+                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                      <p>Is it okay to use this photo?</p>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui black deny button">
+                      Nope
+                    </div>
+                    <div class="ui positive right labeled icon button">
+                      Yep, that's me
+                      <i class="checkmark icon"></i>
+                    </div>
+                  </div>
+                </div> 
+
+                <div id="fgt" class="ui point round abstract" data-content="fgt" data-variation="inverted">●</div>
+                <div id="1fgt" class="ui modal">
+                  <i class="close icon"></i>
+                  <div class="header">
+                    ...
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                      
+                    </div>
+                    <div class="description">
+                      <div class="ui header">We've auto-chosen a profile image for you.</div>
+                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                      <p>Is it okay to use this photo?</p>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui black deny button">
+                      Nope
+                    </div>
+                    <div class="ui positive right labeled icon button">
+                      Yep, that's me
+                      <i class="checkmark icon"></i>
+                    </div>
+                  </div>
+                </div> 
+
+                <div id="adr" class="ui point round abstract" data-content="adr" data-variation="inverted">●</div>
+                <div id="1adr" class="ui modal">
+                  <i class="close icon"></i>
+                  <div class="header">
+                    ...
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                      
+                    </div>
+                    <div class="description">
+                      <div class="ui header">We've auto-chosen a profile image for you.</div>
+                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                      <p>Is it okay to use this photo?</p>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui black deny button">
+                      Nope
+                    </div>
+                    <div class="ui positive right labeled icon button">
+                      Yep, that's me
+                      <i class="checkmark icon"></i>
+                    </div>
+                  </div>
+                </div> 
+
+                <div id="cdd" class="ui point round abstract" data-content="cdd" data-variation="inverted">●</div>
+                <div id="1cdd" class="ui modal">
+                  <i class="close icon"></i>
+                  <div class="header">
+                    ...
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                      
+                    </div>
+                    <div class="description">
+                      <div class="ui header">We've auto-chosen a profile image for you.</div>
+                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
+                      <p>Is it okay to use this photo?</p>
+                    </div>
+                  </div>
+                  <div class="actions">
+                    <div class="ui black deny button">
+                      Nope
+                    </div>
+                    <div class="ui positive right labeled icon button">
+                      Yep, that's me
+                      <i class="checkmark icon"></i>
+                    </div>
+                  </div>
+                </div> 
+            </div>
+
+        
+                <div id="container">
+        			<div id="des" class="masthead des viewport-height stripe">
+        				<!-- <div id="slide-ctl" class="ui stackable four column page grid" style="display:none;"></div> -->
+        				<div class="ui centerAligned stackable page grid">
+                            <div>
+                                <h1 class="centerAligned">社團活動專區</h1>
+                                <div  id="change_g" class="ui medium teal animated button">
+                                    <div class="ui visible content">Next</div>
+                                    <div class="hidden content">
+                                        <i class="right arrow icon"></i>
+                                    </div>
+                                </div>
+                                <div class="ui medium teal animated fade button">
+                                    <a href="#" style="color:white";>
+                                        <div class="visible content">線上欄位申請</div>
+                                        <div class="hidden content">馬上申請GO!</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui stackable page grid ">
+                            <div class="five wide column ">
+                                <div class="ui button centerized"style="padding:0px;background-color:transparent;">
+                                    <div class="ui shape">
+                                        <div id="grouplist1" class="sides">
+                                            <script type='text/javascript'>GroupList1()</script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="six wide column">
+                                <div class="ui button centerized"style="padding:0px;background-color:transparent;">
+                                    <div class="ui shape">
+                                        <div id="grouplist2" class="sides">
+                                            <script type='text/javascript'>GroupList2()</script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="five wide column">
+                                <div class="ui button centerized"style="padding:0px;background-color:transparent;">
+                                    <div class="ui shape">
+                                        <div id="grouplist3" class="sides">
+                                            <script type='text/javascript'>GroupList3()</script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="moallist">
+                                <script type='text/javascript'>moa0()</script>
+                            </div>
+        				</div>
+                        <div class="ui centerAligned stackable page grid">
+                            <div>
+                                <h1 class="centerAligned">系會活動專區</h1>
+                                <div  id="change_d" class="ui medium teal animated button">
+                                    <div class="ui visible content">Next</div>
+                                    <div class="hidden content">
+                                        <i class="right arrow icon"></i>
+                                    </div>
+                                </div>
+                                <div class="ui medium teal animated fade button">
+                                    <a href="#" style="color:white";>
+                                        <div class="visible content">線上欄位申請</div>
+                                        <div class="hidden content">馬上申請GO!</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ui stackable page grid">
+                            <div class="five wide column">
+                                <div class="ui button centerized"style="padding:0px;background-color:transparent;">
+                                    <div class="ui shape op">
+                                        <div id="department1" class="sides">
+                                            <script type='text/javascript'>Department1()</script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="six wide column">
+                                <div class="ui button centerized"style="padding:0px;background-color:transparent;">
+                                    <div class="ui shape op">
+                                        <div id="department2" class="sides">
+                                            <script type='text/javascript'>Department2()</script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="five wide column">
+                                <div class="ui button centerized"style="padding:0px;background-color:transparent;">
+                                    <div class="ui shape op">
+                                        <div id="department3" class="sides">
+                                            <script type='text/javascript'>Department3()</script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="d_moallist">
+                                <script type='text/javascript'>moa1()</script>
+                            </div>
+                        </div>
+                        <div class="ui stackable page grid">
+                            <div class="sixteen wide column ">
+                                <h1 class="centerAligned">學生會公佈欄</h1>
+                                <table class="ui unstackable table">
+                                    <thead>
+                                        <tr>
+                                            <th class="three wide"></th>
+                                            <th class="eight wide "></th>
+                                            <th class="five wide "></th>
+                                        </tr>
+                                    </thead>
+                                <script type='text/javascript' src='http://app.nchusg.org/news/index.php?key=ce04b57d60f9c918d68bdc1de0458a14&cid=0&rows=6'></script>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+            		<!--Timeline.js-->
+            		<div class="viewport-height stripe">
+            			<div id="sg-poster"></div>
+        			</div>
+            		<!-- <div class="masthead viewport-height stripe">
+            		</div> -->
+            		<div id="footer" class="masthead footer stripe">
+        				<div class="ui page one column grid">
+            				<div class="centerAligned column">
+            					<a target="_blank" href="http://nchusg.org/" class="ui us image blue label">
+            						<img src="http://i.imgur.com/zF2JgJ7s.jpg">
+            						國立中興大學學生會
+            					</a>
+            					<a href="mailto:nchusg20@gmail.com" class="ui us image blue label">
+            						<i class="mail icon"></i>
+            						nchusg20@gmail.com
+            						<!-- <div class="detail">使用 Email 聯絡我們</div> -->
+            					</a>
+            					<a href="tel:0422840245" class="ui us image blue label">
+            						<i class="call icon"></i>
+            						04-22840245
+            						<!-- <div class="detail">使用電話聯絡我們</div> -->
+            					</a>
+            				</div>
+            			</div>
+            		</div>
+        		</div>
+            </div>
+        </div>
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="javascripts/bootstrap.min.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.2.0/semantic.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.11/jquery.scrollTo.min.js"></script>
+		<script type="text/javascript" src="js/jt2html.min.js"></script>
+		<script type="text/javascript" src='js/site.js'></script>
+		<!-- google analytics -->
+		<script>
+		</script>
+
+	</body>
+</html>
