@@ -659,7 +659,7 @@
               width:5%;
               height:5%;
               display:inline-block;
-              font-size:20px; /* 修改圆点的大小 */
+              font-size:35px; /* 修改圆点的大小 */
               text-align:center;
               text-decoration:none;
               color:black; /* 修改圆点的颜色 */
@@ -670,7 +670,7 @@
               width:5%;
               height:5%;
               display:inline-block;
-              font-size:30px; /* 修改圆点的大小 */
+              font-size:45px; /* 修改圆点的大小 */
               text-align:center;
               text-decoration:none;
               color:#F00; /* 修改圆点的颜色 */
@@ -763,24 +763,6 @@
                        mode=sideIn();
                     }
                 );
-                var t=0;
-                $('#modec').click(
-                    function()
-                    {
-                        if(t==0)
-                        {
-                            $('#wrapper').fadeIn(500);
-                            $('#container-fluid').hide();
-                            t=1;
-                        }
-                        else
-                        {
-                            $('#container-fluid').fadeIn(500);
-                            $('#wrapper').hide();
-                            t=0;
-                        }
-                    }
-                );
             });
             // 控制側邊欄的顯現與關閉
             var sideIO=function(mode,target,target1){
@@ -862,11 +844,6 @@
                        popup: '.special.popup'
                       
                     }); 
-                $('.coupled.modal')
-                  .modal({
-                    allowMultiple: false
-                  })
-                ;
                 $('.ui.sidebar')
                   .sidebar({closable:false})
                 ;  
