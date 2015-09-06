@@ -529,7 +529,7 @@
             #side{
                 position: absolute;
                 left: 0;
-                top: 100px;
+                top: 23%;
                 width:auto;
                 float: left;
                 z-index: 120;
@@ -686,26 +686,28 @@
             }
             @media screen and (max-width: 710px) {
                 .round {
-                 font-size: 10px;
+                 font-size: 20px;
 
                 }
                 .round:hover {
-                 font-size: 20px;
+                 font-size: 30px;
                 }
                 .btnbox{
                     margin-left:-5px;
                     margin-top:-8px;
                 }
-
-            }
-            @media screen and (max-width: 768px) {
-                .div1 {
-                 font-size: 20px;
+                #side{
+                    position: ;
                 }
             }
-            @media screen and (min-width: 768px) and (max-width: 992px) {
-                .div1 {
-                 font-size: 30px;
+            @media screen and (max-width: 480px) {
+                #side{
+                    top:10%;
+                }
+            }
+            @media screen and (min-width: 480px) and (max-width: 780px) {
+                #side{
+                    top:12%;
                 }
             }
 
@@ -719,7 +721,7 @@
                height: auto!important;
                margin-left: -275px!important;
                position: absolute;
-               top:0;
+               top:30%;
             }
             .ui.medium.image img{
                 
@@ -732,6 +734,10 @@
                 background-color:#F2F2F2;
                 cursor: pointer;
                 z-index: 100
+            }
+            #side_btn{
+                position: absolute;
+                right: 0
             }
         </style>
         <script type="text/javascript">
@@ -765,6 +771,20 @@
                         
                     }
                 );
+                var open=0;
+                $('#side').hide();
+                $('#side_btn').click(function(){
+                    if(open==0)
+                    {
+                        $('#side').fadeIn(600);
+                        open=1;
+                    }
+                    else
+                    {
+                        $('#side').fadeOut(600);
+                        open=0;
+                    }
+                });
                 $('#wrapper').click(
                     function()
                     {
@@ -1400,6 +1420,9 @@
         
                 <div id="container">
         			<div id="des" class="masthead des viewport-height stripe">
+                        <div  id="side_btn" class="ui button" data-content="Hello. This is an inverted popup" data-variation="inverted">
+                             <i class="fa fa-bars"></i>
+                        </div>
         				<!-- <div id="slide-ctl" class="ui stackable four column page grid" style="display:none;"></div> -->
         				<div class="ui centerAligned stackable page grid">
                             <div>
