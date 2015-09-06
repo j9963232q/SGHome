@@ -589,10 +589,16 @@
                 display: none;
                 overflow:scroll;
             }
-            .dayevent img{
+            .dayevent button{
                 width: 100%;
                 top: 0;
                 height: 50%;
+                right: 0%;
+            }
+            .ui.button.abstract img{
+                width: 100%;
+                top: 0;
+                height: 100%;
                 right: 0%;
                 cursor: pointer;
             }
@@ -604,43 +610,43 @@
             }
             #ccs{
                 position: absolute;
-                top: 35%;
+                top: 33%;
                 left: 28%;
             }
             #cse{
                 position: absolute;
                 top: 52%;
-                left: 32%;
+                left: 30%;
             }
             #crr{
                 position: absolute;
-                top: 67%;
+                top: 69%;
                 left: 30%;
             }
             #cwt{
                 position: absolute;
-                top: 84%;
+                top: 81%;
                 left: 31%;
             }
             #csr{
                 position: absolute;
-                top: 27%;
-                left: 50%;
+                top: 32%;
+                left: 42%;
             }
             #fgt{
                 position: absolute;
                 top:50%;
-                left: 44%;
+                left: 43%;
             }
             #adr{
                 position: absolute;
-                top: 75%;
+                top: 73%;
                 left: 43%;
             }
             #cdd{
                 position: absolute;
-                top: 20%;
-                left: 65%;
+                top: 19%;
+                left: 64%;
             }
             #map{
                 position: absolute;
@@ -674,10 +680,6 @@
               text-align:center;
               text-decoration:none;
               color:#F00; /* 修改圆点的颜色 */
-            }
-            .abstract_box{
-                width: 100%;
-                height:100%;
             }
             .point{
                 cursor: pointer;
@@ -717,6 +719,10 @@
                margin-left: -275px!important;
                position: absolute;
                top:0;
+            }
+            .ui.medium.image img{
+                
+                height: 60%;
             }
             #X{
                 position: absolute;
@@ -871,22 +877,23 @@
                     <div class="dayevent" id="21">
                     <!-- data-toggle="tooltip"代表提示窗為指定的 -->
                     <!-- data-toggle="modal"代表click後會有視窗出現 -->
-                        <button id="a" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/1.jpg" data-toggle="modal"  data-target="#img01"></button>
-                        <button id="b" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/2.jpg" data-toggle="modal"  data-target="#img02"></button>
-                        <button id="c" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/3.jpg" data-toggle="modal"  data-target="#img03"></button>
+                        <button id="a" class="ui button abstract" data-html="<div class='header'>學生會活動</div><div class='content'><div class='content'>...</div></div>" data-variation="inverted"><img src="img/1.jpg"></button>
+                        <button id="event_2" class="ui button abstract" data-html="<div class='header'>中興大學野望影展</div><div class='content'><div class='content'>19:00~21:00</div></div>" data-variation="inverted"><img src="img/IEsUKp7.jpg"></button>
+                        <button id="c" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/3.jpg"></button>
                     </div>
                     <div class="dayevent" id="22">
-                        <button id="a" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/1.jpg" data-toggle="modal"  data-target="#img01"></button>
+                        <button id="a" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/1.jpg"></button>
                     </div>
                     <div class="dayevent" id="23">
-                        <button id="b" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/2.jpg" data-toggle="modal"  data-target="#img01"></button>
+                        <button id="b" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/2.jpg"></button>
                     </div>
                     <div class="dayevent" id="24">
-                        <button id="c" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/3.jpg" data-toggle="modal"  data-target="#img01"></button>
+                        <button id="c" class="ui button abstract" data-content="Hello. This is an inverted popup" data-variation="inverted"><img src="img/3.jpg"></button>
                     </div>
                     <div class="dayevent" id="25">
                     </div>
                     <div class="dayevent" id="26">
+                        <button id="event_6" class="ui button abstract" data-html="<div class='header'>鏡頭外的遼闊</div><div class='content'>5/2（六）13:30～16:10</div>" data-variation="inverted"><img src="img/73MDUQm.jpg"></button>
                     </div>
                     <div class="dayevent" id="27">
                     </div>
@@ -943,6 +950,40 @@
               </div>
             </div>
 
+            <div id="1event_2" class="ui modal">
+              <i class="close icon"></i>
+                  <div class="header">
+                    中興大學野望影展
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                        <img src="img/IEsUKp7.jpg">
+                    </div>
+                    <div class="description">
+                      <div class="ui header">【中興大學野望影展】</div>
+                      <p> 讀期中考壓力大嗎，給大家一個有趣的活動<br><br>
+
+                        　 中興大學也加入野望影展的行列囉！ <br><br>
+
+                        　 中興野望影展將於2015/03/09至06/15的每週一晚間七時至九時，於本校生命科學院104教室免費播映，預計共有14場，歡迎台中的朋友共襄盛舉！<br> 預定公開播映時間表和主持人如下：<br><br>
+
+                        　04/20 沙漠之蟻帝國（吳聲海）<br>
+                        04/27 最後之獅（張仕緯）<br>
+                        05/04 綠之宇宙（許秋容）<br>
+                        05/11 南太平洋：易碎的天堂（高孝偉）<br>
+                        05/18 超級聰敏動物：第1集（尤少彬）<br>
+                        05/25 森林：光之戰役、蜂鳥：寶石信差（蕭淑娟）<br>
+                        06/01 人類星球：叢林—樹之人（劉克竑）<br>
+                        06/08 恆河：生命的緞帶、野性斯堪地納維亞：芬蘭（劉奇璋）<br>
+                        06/15 解剖巨物：長頸鹿、疏林草原皇后（吳聲海）<br><br>
+
+                        活動時間: 2015/03/09至06/15的每週一晚間七時至九時<br><br>
+
+                        $: free</p>
+                    </div>
+                </div>
+            </div>
+
             <div id="1b" class="ui modal">
               <i class="close icon"></i>
               <div class="header">
@@ -993,6 +1034,38 @@
                   <i class="checkmark icon"></i>
                 </div>
               </div>
+            </div>
+            <div id="1event_6" class="ui modal">
+                <i class="close icon"></i>
+                  <div class="header">
+                    鏡頭外的遼闊
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                        <img src="img/73MDUQm.jpg">
+                    </div>
+                    <div class="description">
+                      <div class="ui header">【王山x孫志誠 《與大馬攝影家面對面》Meeting the Artists---鏡頭外的遼闊】</div>
+                      <p>折騰了一個禮拜的期中考終於結束了！<br>
+                        還在想考完試的週末要做什麼嗎？<br><br>
+
+                        攝影社將於5/2下午舉辦攝影家座談會，<br>
+                        想聽聽不同攝影家對於攝影的看法嗎？<br>
+                        我們難得邀請到來自馬來西亞的兩位藝術家來和大家分享自己的攝影心路歷程！<br>
+                        除了聽聽他們對於自身的攝影經驗，<br>
+                        有什麼樣在攝影方面的問題也可以當面和他們詢問<br>
+                        如此難得可以和大師們面對面的座談會，趕快來參加吧！<br><br>
+
+                        地點就在國立中興大學國農大樓3F高希均知識經濟研究室<br>
+                        快邀請親朋友好朋友大朋友小朋友一起來！<br>
+                        線上報名網址<br><br>
+
+                        參加本活動可累積自主學習點數1點<br>
+                        活動時間: 5/2（六）13:30～16:10<br>
+
+                        $: free</p>
+                    </div>
+                  </div>
             </div>
         <div id="wrapper">
     		<div id="bg" class="background frame">
@@ -1150,20 +1223,37 @@
                   </div>
                 </div> 
 
-                <div id="csr" class="ui point round abstract" data-content="csr" data-variation="inverted">●</div>
+                <div id="csr" class="ui point round abstract" data-html="<div class='header'>中興大學野望影展</div><div class='content'><div class='content'>03/09~06/15的每週一晚間七時至九時</div></div>" data-variation="inverted">●</div>
                 <div id="1csr" class="ui modal">
                   <i class="close icon"></i>
                   <div class="header">
-                    ...
+                    中興大學野望影展
                   </div>
                   <div class="image content">
                     <div class="ui medium image">
-                      
+                        <img src="img/IEsUKp7.jpg">
                     </div>
                     <div class="description">
-                      <div class="ui header">We've auto-chosen a profile image for you.</div>
-                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-                      <p>Is it okay to use this photo?</p>
+                      <div class="ui header">【中興大學野望影展】</div>
+                      <p> 讀期中考壓力大嗎，給大家一個有趣的活動<br><br>
+
+                        　 中興大學也加入野望影展的行列囉！ <br><br>
+
+                        　 中興野望影展將於2015/03/09至06/15的每週一晚間七時至九時，於本校生命科學院104教室免費播映，預計共有14場，歡迎台中的朋友共襄盛舉！<br> 預定公開播映時間表和主持人如下：<br><br>
+
+                        　04/20 沙漠之蟻帝國（吳聲海）<br>
+                        04/27 最後之獅（張仕緯）<br>
+                        05/04 綠之宇宙（許秋容）<br>
+                        05/11 南太平洋：易碎的天堂（高孝偉）<br>
+                        05/18 超級聰敏動物：第1集（尤少彬）<br>
+                        05/25 森林：光之戰役、蜂鳥：寶石信差（蕭淑娟）<br>
+                        06/01 人類星球：叢林—樹之人（劉克竑）<br>
+                        06/08 恆河：生命的緞帶、野性斯堪地納維亞：芬蘭（劉奇璋）<br>
+                        06/15 解剖巨物：長頸鹿、疏林草原皇后（吳聲海）<br><br>
+
+                        活動時間: 2015/03/09至06/15的每週一晚間七時至九時<br><br>
+
+                        $: free</p>
                     </div>
                   </div>
                   <div class="actions">
@@ -1231,20 +1321,66 @@
                   </div>
                 </div> 
 
-                <div id="cdd" class="ui point round abstract" data-content="cdd" data-variation="inverted">●</div>
+                <div id="cdd" class="ui point round abstract" data-html="<div class='header'>鏡頭外的遼闊</div><div class='content'>5/2（六）13:30～16:10<br>&nbsp;</div><div class='header'>中興大學野望影展</div><div class='content'>03/09~06/15的每週一晚間七時至九時</div>" data-variation="inverted">●</div>
                 <div id="1cdd" class="ui modal">
                   <i class="close icon"></i>
                   <div class="header">
-                    ...
+                    鏡頭外的遼闊
                   </div>
                   <div class="image content">
                     <div class="ui medium image">
-                      
+                        <img src="img/73MDUQm.jpg">
                     </div>
                     <div class="description">
-                      <div class="ui header">We've auto-chosen a profile image for you.</div>
-                      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-                      <p>Is it okay to use this photo?</p>
+                      <div class="ui header">【王山x孫志誠 《與大馬攝影家面對面》Meeting the Artists---鏡頭外的遼闊】</div>
+                      <p>折騰了一個禮拜的期中考終於結束了！<br>
+                        還在想考完試的週末要做什麼嗎？<br><br>
+
+                        攝影社將於5/2下午舉辦攝影家座談會，<br>
+                        想聽聽不同攝影家對於攝影的看法嗎？<br>
+                        我們難得邀請到來自馬來西亞的兩位藝術家來和大家分享自己的攝影心路歷程！<br>
+                        除了聽聽他們對於自身的攝影經驗，<br>
+                        有什麼樣在攝影方面的問題也可以當面和他們詢問<br>
+                        如此難得可以和大師們面對面的座談會，趕快來參加吧！<br><br>
+
+                        地點就在國立中興大學國農大樓3F高希均知識經濟研究室<br>
+                        快邀請親朋友好朋友大朋友小朋友一起來！<br>
+                        線上報名網址<br><br>
+
+                        參加本活動可累積自主學習點數1點<br>
+                        活動時間: 5/2（六）13:30～16:10<br>
+
+                        $: free</p>
+                    </div>
+                  </div>
+                  <div class="header">
+                    中興大學野望影展
+                  </div>
+                  <div class="image content">
+                    <div class="ui medium image">
+                        <img src="img/IEsUKp7.jpg">
+                    </div>
+                    <div class="description">
+                      <div class="ui header">【中興大學野望影展】</div>
+                      <p> 讀期中考壓力大嗎，給大家一個有趣的活動<br><br>
+
+                        　 中興大學也加入野望影展的行列囉！ <br><br>
+
+                        　 中興野望影展將於2015/03/09至06/15的每週一晚間七時至九時，於本校生命科學院104教室免費播映，預計共有14場，歡迎台中的朋友共襄盛舉！<br> 預定公開播映時間表和主持人如下：<br><br>
+
+                        　04/20 沙漠之蟻帝國（吳聲海）<br>
+                        04/27 最後之獅（張仕緯）<br>
+                        05/04 綠之宇宙（許秋容）<br>
+                        05/11 南太平洋：易碎的天堂（高孝偉）<br>
+                        05/18 超級聰敏動物：第1集（尤少彬）<br>
+                        05/25 森林：光之戰役、蜂鳥：寶石信差（蕭淑娟）<br>
+                        06/01 人類星球：叢林—樹之人（劉克竑）<br>
+                        06/08 恆河：生命的緞帶、野性斯堪地納維亞：芬蘭（劉奇璋）<br>
+                        06/15 解剖巨物：長頸鹿、疏林草原皇后（吳聲海）<br><br>
+
+                        活動時間: 2015/03/09至06/15的每週一晚間七時至九時<br><br>
+
+                        $: free</p>
                     </div>
                   </div>
                   <div class="actions">
