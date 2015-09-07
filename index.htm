@@ -529,7 +529,7 @@
             #side{
                 position: absolute;
                 left: 0;
-                top: 23%;
+                top: 26%;
                 width:auto;
                 float: left;
                 z-index: 120;
@@ -702,12 +702,12 @@
             }
             @media screen and (max-width: 480px) {
                 #side{
-                    top:10%;
+                    top:11.5%;
                 }
             }
             @media screen and (min-width: 480px) and (max-width: 780px) {
                 #side{
-                    top:12%;
+                    top:13%;
                 }
             }
 
@@ -734,10 +734,6 @@
                 background-color:#F2F2F2;
                 cursor: pointer;
                 z-index: 100
-            }
-            #side_btn{
-                position: absolute;
-                right: 0
             }
         </style>
         <script type="text/javascript">
@@ -771,20 +767,13 @@
                         
                     }
                 );
+                // 控制側邊欄顯現
                 var open=0;
                 $('#side').hide();
                 $('#side_btn').click(function(){
-                    if(open==0)
-                    {
-                        $('#side').fadeIn(600);
-                        open=1;
-                    }
-                    else
-                    {
-                        $('#side').fadeOut(600);
-                        open=0;
-                    }
+                    open=side_btn_click(open);
                 });
+                // 讓拉出的側欄消失
                 $('#wrapper').click(
                     function()
                     {
@@ -853,7 +842,23 @@
                     mode="";
                     return mode;
                 };
+            // 側邊欄的顯現
+            var side_btn_click=function(open){
+                if(open==0)
+                {
+                    $('#side').fadeIn(600);
+                    open=1;
+                    return open;
+                }
+                else
+                {
+                    $('#side').fadeOut(600);
+                    open=0;
+                    return open;
+                }
+            };
         </script>
+        <!-- 以下為semantic-ui的功能 -->
         <script type="text/javascript">
             var target,mode=0;
             $(document).ready(function(){
@@ -1420,10 +1425,13 @@
         
                 <div id="container">
         			<div id="des" class="masthead des viewport-height stripe">
-                        <div  id="side_btn" class="ui button" data-content="Hello. This is an inverted popup" data-variation="inverted">
-                             <i class="fa fa-bars"></i>
-                        </div>
         				<!-- <div id="slide-ctl" class="ui stackable four column page grid" style="display:none;"></div> -->
+                        <div id="side_btn" class="ui vertical animated button" tabindex="0">
+                          <div class="hidden content" style="font-size:20px;">側邊欄</div>
+                          <div class="visible content">
+                            <i class="fa fa-bars fa-2x"></i>
+                          </div>
+                        </div>  
         				<div class="ui centerAligned stackable page grid">
                             <div>
                                 <h1 class="centerAligned">社團活動專區</h1>
